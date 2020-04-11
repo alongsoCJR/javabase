@@ -102,7 +102,7 @@ public class MergeTwoListT021 {
             return l1;
         }
 
-        ListNode result = null;
+//        ListNode result = null;
 //        if (l1.val > l2.val) {
 //            result = new ListNode(l2.val);
 //            result.next = mergeTwoLists2(l1, l2.next);
