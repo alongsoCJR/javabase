@@ -12,6 +12,17 @@ import org.junit.Before;
  */
 public abstract class AbstractTest {
     protected Log logger = LogFactory.getLog(this.getClass());
+    public static String[] inputStrs = {};
+    public static String[] outputStrs = {};
+    public static String[] exceptedStrs = {};
+    public static int[] inputNums = {};
+    public static int[] outputNums = {};
+    public static int[] exceptedNums = {};
+    public static int outputNum = Integer.MAX_VALUE;
+    public static int exceptedNum = Integer.MAX_VALUE;
+    public static String outputStr = "";
+    public static String exceptedStr = "";
+
 
     long startTime = 0L;
     long endTime = 0L;
