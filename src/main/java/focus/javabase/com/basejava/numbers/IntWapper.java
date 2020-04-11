@@ -1,4 +1,4 @@
-package focus.javabase.com.base.numbers;
+package focus.javabase.com.basejava.numbers;
 
 
 import java.lang.annotation.Native;

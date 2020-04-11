@@ -1,4 +1,4 @@
-package focus.javabase.com.base;
+package focus.javabase.com.basejava;
 
 import java.util.Date;
 

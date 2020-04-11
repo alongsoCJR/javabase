@@ -1,4 +1,4 @@
-package focus.javabase.com.computer;
+package focus.javabase.com.basejava.computer;
 
 import java.util.Random;
 

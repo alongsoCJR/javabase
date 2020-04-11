@@ -1,4 +1,4 @@
-package focus.javabase.com.quicksort;
+package focus.javabase.com.algorithm.sort.quicksort;
 
 /**
  * @author chenjianrong-lhq 2019年07月08日 15:45:07

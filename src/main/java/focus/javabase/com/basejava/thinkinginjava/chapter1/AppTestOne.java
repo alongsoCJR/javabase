@@ -1,4 +1,4 @@
-package focus.javabase.com.thinkinginjava.chapter1;
+package focus.javabase.com.basejava.thinkinginjava.chapter1;
 
 /**
  * @author chenjianrong-lhq 2019年06月29日 15:15:17

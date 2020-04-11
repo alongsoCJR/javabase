@@ -1,4 +1,4 @@
-package focus.javabase.com.base.numbers;
+package focus.javabase.com.basejava.numbers;
 
 /**
  * @author chenjianrong-lhq 2019年07月15日 15:09:57

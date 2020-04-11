@@ -1,8 +1,8 @@
 package focus.javabase.com.algorithm;
 
-import focus.javabase.com.quicksort.QuickSort3Way;
-import focus.javabase.com.quicksort.QuickSortBasic;
-import focus.javabase.com.quicksort.QuickSortDualPivot;
+import focus.javabase.com.algorithm.sort.quicksort.QuickSort3Way;
+import focus.javabase.com.algorithm.sort.quicksort.QuickSortBasic;
+import focus.javabase.com.algorithm.sort.quicksort.QuickSortDualPivot;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.Random;

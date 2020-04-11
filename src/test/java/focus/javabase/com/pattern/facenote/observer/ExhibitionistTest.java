@@ -1,9 +1,7 @@
-package focus.javabase.com.facenote.observer;
+package focus.javabase.com.pattern.facenote.observer;
 
-import focus.javabase.com.facenote.Exhibitionist;
+import focus.javabase.com.pattern.facenote.Exhibitionist;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ExhibitionistTest {
 

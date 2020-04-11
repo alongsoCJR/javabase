@@ -1,5 +1,6 @@
 package focus.javabase.com.base;
 
+import focus.javabase.com.basejava.ConstantFields;
 import org.junit.Test;
 
 public class ConstantFieldsTest {

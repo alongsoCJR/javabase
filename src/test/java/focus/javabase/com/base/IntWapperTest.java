@@ -1,6 +1,6 @@
 package focus.javabase.com.base;
 
-import focus.javabase.com.base.numbers.IntWapper;
+import focus.javabase.com.basejava.numbers.IntWapper;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package focus.javabase.com.computer;
+package focus.javabase.com.basejava.computer;
 
 /**
  * @author chenjianrong-lhq 2019年08月27日 08:11:04

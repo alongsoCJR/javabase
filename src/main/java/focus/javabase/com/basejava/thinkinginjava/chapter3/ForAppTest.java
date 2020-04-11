@@ -1,4 +1,4 @@
-package focus.javabase.com.thinkinginjava.chapter3;
+package focus.javabase.com.basejava.thinkinginjava.chapter3;
 
 /**
  * @Author chenjianrong-lhq
