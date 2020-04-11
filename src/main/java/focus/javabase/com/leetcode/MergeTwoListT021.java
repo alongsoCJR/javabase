@@ -102,25 +102,39 @@ public class MergeTwoListT021 {
             return l1;
         }
 
-//        ListNode result = null;
-//        if (l1.val > l2.val) {
-//            result = new ListNode(l2.val);
-//            result.next = mergeTwoLists2(l1, l2.next);
-//        } else {
-//            result = new ListNode(l1.val);
-//            // 递归
-//            result.next = mergeTwoLists2(l1.next, l2);
-//        }
-//        return result;
+        ListNode result = null;
         if (l1.val > l2.val) {
-            l2.next = mergeTwoLists2(l1, l2.next);
-            return l2;
+            result = new ListNode(l2.val);
+            result.next = mergeTwoLists2(l1, l2.next);
         } else {
+            result = new ListNode(l1.val);
             // 递归
-            l1.next = mergeTwoLists2(l1.next, l2);
-            return l1;
+            result.next = mergeTwoLists2(l1.next, l2);
         }
+        return result;
+        // 参考官方代码，结果的返回
     }
+
+    // 官方提供的迭代
+    public static ListNode mergeTwoLists3(ListNode l1, ListNode l2) {
+        ListNode prev = new ListNode(-1);
+        ListNode prevhead = prev;
+        while (l1 != null && l2 != null) {
+            if (l1.val > l2.val) {
+                prev.next = l2;
+                l2 = l2.next;
+            } else {
+                prev.next = l1;
+                l1 = l1.next;
+            }
+            prev = prev.next;
+        }
+        prev.next = l1 == null ? l2 : l1;
+
+        return prevhead.next;
+    }
+
+
     /**
      *else if (l1.next == null) {
      *                 if (l1.val > l2.val) {
