@@ -15,6 +15,7 @@ public class MergeTwoListT021 {
 
     public static ListNode list = new ListNode(0);
 
+    // 思路不清晰，走了很多冤枉路
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
@@ -27,6 +28,7 @@ public class MergeTwoListT021 {
         ListNode result = list;
         // 迭代
         while (l1 != null && l2 != null) {
+            // 为什么还要判断l1.next 和 l2.next呢？迭代不熟悉啊
             if (l1.next != null && l2.next != null) {
                 // 比较大小，取最小
                 if (l1.val > l2.val) {
