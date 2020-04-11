@@ -103,15 +103,23 @@ public class MergeTwoListT021 {
         }
 
         ListNode result = null;
+//        if (l1.val > l2.val) {
+//            result = new ListNode(l2.val);
+//            result.next = mergeTwoLists2(l1, l2.next);
+//        } else {
+//            result = new ListNode(l1.val);
+//            // 递归
+//            result.next = mergeTwoLists2(l1.next, l2);
+//        }
+//        return result;
         if (l1.val > l2.val) {
-            result = new ListNode(l2.val);
-            result.next = mergeTwoLists2(l1, l2.next);
+            l2.next = mergeTwoLists2(l1, l2.next);
+            return l2;
         } else {
-            result = new ListNode(l1.val);
             // 递归
-            result.next = mergeTwoLists2(l1.next, l2);
+            l1.next = mergeTwoLists2(l1.next, l2);
+            return l1;
         }
-        return result;
     }
     /**
      *else if (l1.next == null) {
