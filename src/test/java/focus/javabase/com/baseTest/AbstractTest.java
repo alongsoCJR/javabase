@@ -12,14 +12,23 @@ import org.junit.Before;
  */
 public abstract class AbstractTest {
     protected Log logger = LogFactory.getLog(this.getClass());
+    /** String 数组**/
     public static String[] inputStrs = {};
     public static String[] outputStrs = {};
     public static String[] exceptedStrs = {};
+
+    /** int 数组**/
     public static int[] inputNums = {};
     public static int[] outputNums = {};
     public static int[] exceptedNums = {};
+
+    /** int值**/
+    public static int inputNum = Integer.MAX_VALUE;
     public static int outputNum = Integer.MAX_VALUE;
     public static int exceptedNum = Integer.MAX_VALUE;
+
+    /** String字符串**/
+    public static String inputStr = "";
     public static String outputStr = "";
     public static String exceptedStr = "";
 
