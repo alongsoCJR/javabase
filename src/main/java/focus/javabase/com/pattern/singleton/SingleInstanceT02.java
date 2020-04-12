@@ -3,19 +3,19 @@ package focus.javabase.com.pattern.singleton;
 /**
  * @author chenjianrong-lhq 2020年02月20日 11:18:10
  * @Description: 单例模式 懒汉式
- * @ClassName: SingleInstance
+ * @ClassName: SingleInstanceT00
  */
-public class SingleInstance2 {
+public class SingleInstanceT02 {
 
     // 构造器私有化
-    private SingleInstance2() {
+    private SingleInstanceT02() {
 
     }
 
-    public static SingleInstance2 instance = null;
+    public static SingleInstanceT02 instance = null;
 
     // 同步方法作用域太大，性能低
-    public static synchronized SingleInstance2 getInstance() {
+    public static synchronized SingleInstanceT02 getInstance() {
         if (instance == null) {
             try {
                 // 模拟多线程，使效果更明显
@@ -23,7 +23,7 @@ public class SingleInstance2 {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            instance = new SingleInstance2();
+            instance = new SingleInstanceT02();
         }
         return instance;
     }
