@@ -66,19 +66,20 @@ public class SearchInsertT035 {
         return index;
     }
 
-
-    private static int binarySearch(int[] nums, int low, int high, int target) {
-        int mid = (low + high) >> 1;
-        int key = nums[mid];
-        if (target > key) {
-            return 0;
-
-        } else if (target < key) {
-
-        } else {
-            return mid;
+    // 递归
+    public static int binarySearch(int[] nums, int low, int high, int target) {
+        if (low <= high) {
+            int mid = (low + high) >> 1;
+            int key = nums[mid];
+            if (key == target) {
+                return mid;
+            } else if (key < target) {
+                return binarySearch(nums, mid + 1, high, target);
+            } else {
+                return binarySearch(nums, low, mid - 1, target);
+            }
         }
-        return 0;
+        return low;
     }
 
     //{

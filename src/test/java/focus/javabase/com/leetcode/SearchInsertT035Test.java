@@ -7,21 +7,21 @@ import org.junit.Test;
 
 public class SearchInsertT035Test extends AbstractTest {
 
-    //        @Before
+            @Before
     public void setUp() throws Exception {
         inputNums = new int[]{1, 3, 5, 6};
         inputNum = 5;
         exceptedNum = 2;
     }
 
-    //        @Before
+//            @Before
     public void setUp1() throws Exception {
         inputNums = new int[]{1, 3, 5, 6};
         inputNum = 2;
         exceptedNum = 1;
     }
 
-    //    @Before
+//    @Before
     public void setUp2() throws Exception {
         inputNums = new int[]{1, 3, 5, 6};
         inputNum = 7;
@@ -36,7 +36,7 @@ public class SearchInsertT035Test extends AbstractTest {
         exceptedNum = 0;
     }
 
-    @Before
+    //    @Before
     public void setUp4() throws Exception {
         inputNums = new int[]{1, 2, 4, 6, 7};
         inputNum = 3;
@@ -53,6 +53,12 @@ public class SearchInsertT035Test extends AbstractTest {
     @Test
     public void searchInsert() {
         outputNum = SearchInsertT035.searchInsert1(inputNums, inputNum);
+        Assert.assertEquals(exceptedNum, outputNum);
+    }
+
+    @Test
+    public void binarySearch() {
+        outputNum = SearchInsertT035.binarySearch(inputNums, 0, inputNums.length - 1, inputNum);
         Assert.assertEquals(exceptedNum, outputNum);
     }
 }
