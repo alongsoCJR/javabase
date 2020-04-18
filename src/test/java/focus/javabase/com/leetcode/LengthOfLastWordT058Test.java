@@ -9,13 +9,13 @@ import static org.junit.Assert.*;
 
 public class LengthOfLastWordT058Test extends AbstractTest {
 
-//    @Before
+    @Before
     public void setUp() throws Exception {
         inputStr = "Hello World";
         exceptedNum = 5;
     }
 
-    @Before
+//    @Before
     public void setUp1() throws Exception {
         inputStr = "a ";
         exceptedNum = 1;
@@ -23,7 +23,7 @@ public class LengthOfLastWordT058Test extends AbstractTest {
 
     @Test
     public void lengthOfLastWord() {
-        outputNum = LengthOfLastWordT058.lengthOfLastWord(inputStr);
+        outputNum = LengthOfLastWordT058.lengthOfLastWord2(inputStr);
         Assert.assertEquals(exceptedNum, outputNum);
     }
 }

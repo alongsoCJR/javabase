@@ -20,11 +20,41 @@ public class LengthOfLastWordT058 {
         assert s != null;
         String string = s.trim();
         int i = 0, j;
-        for (j = string.length() - 1; j >= 0; j--) {
-            char c = string.charAt(j);
-            if (c == ' ') {
+        for (j = string.length() - 1; j >= 0 && string.charAt(j) != ' '; j--) {
+            i++;
+        }
+        return i;
+    }
+
+
+    //
+    public static int lengthOfLastWord1(String s) {
+        assert s != null;
+        int i = 0, j;
+        for (j = s.length() - 1; j >= 0; j--) {
+            if (s.charAt(j) == ' ') {
+                if (i == 0) {
+                    continue;
+                }
                 break;
             }
+            i++;
+        }
+        return i;
+    }
+
+
+    public static int lengthOfLastWord2(String s) {
+        assert s != null;
+        int end = s.length() - 1;
+        while (s.charAt(end) == ' ') {
+            end--;
+        }
+        if (end < 0) {
+            return 0;
+        }
+        int i = 0, j;
+        for (j = end; j >= 0 && s.charAt(j) != ' '; j--) {
             i++;
         }
         return i;
