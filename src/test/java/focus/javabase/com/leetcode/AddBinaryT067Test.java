@@ -61,7 +61,7 @@ public class AddBinaryT067Test extends AbstractTest {
 
     @Test
     public void addBinary() {
-        outputStr = AddBinaryT067.addBinary1(inputStrA, inputStrB);
+        outputStr = AddBinaryT067.addBinary3(inputStrA, inputStrB);
         Assert.assertEquals(exceptedStr, outputStr);
     }
 }

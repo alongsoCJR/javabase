@@ -136,7 +136,8 @@ public class AddBinaryT067 {
 
     }
 
-
+    // '1'-'0'=1,'1'-'1'=0,'0'-'0'=0,'0'-'1'=-1; Math.abs()
+    //
     public static String addBinary2(String a, String b) {
         assert a != null && b != null;
         if (a.length() == 0) {
@@ -145,22 +146,52 @@ public class AddBinaryT067 {
         if (b.length() == 0) {
             return a;
         }
-        char[] aChars = a.toCharArray();
-        char[] bChars = b.toCharArray();
-        int len = a.length() < b.length() ? a.length() : b.length();
-        for (int i = len - 1; i >= 0; i++) {
-            if (aChars[i] != bChars[i]) {
+        while (a.length() > b.length()) {
+            // 给b补0
+            b = "0" + b;
+        }
+        while (b.length() > a.length()) {
+            // 给a补0
+            a = "0" + a;
+        }
+        int[] carry = new int[a.length()];
+        for (int i = a.length() - 1; i >= 0; i--) {
+            int sum = a.charAt(i) - '0' + b.charAt(i);
+            if (a.charAt(i) != b.charAt(i)) {
 
             } else {
-                if (aChars[i] == '1') {
 
-                } else {
-
-                }
             }
         }
 
+        if (a.charAt(0) == '1' && carry[0] == '1') {
+            a = "10" + a.substring(1, a.length());
+        }
         return "";
+    }
+
+
+    // 参考
+    public static String addBinary3(String a, String b) {
+        int n = a.length(), m = b.length();
+        if (n < m) return addBinary3(b, a);
+        int L = Math.max(n, m);
+
+        StringBuilder sb = new StringBuilder();
+        int carry = 0, j = m - 1;
+        for (int i = L - 1; i > -1; --i) {
+            if (a.charAt(i) == '1') ++carry;
+            if (j > -1 && b.charAt(j--) == '1') ++carry;
+
+            if (carry % 2 == 1) sb.append('1');
+            else sb.append('0');
+
+            carry /= 2;
+        }
+        if (carry == 1) sb.append('1');
+        sb.reverse();
+
+        return sb.toString();
     }
 
 
