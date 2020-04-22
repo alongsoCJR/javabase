@@ -15,10 +15,10 @@ package focus.javabase.com.leetcode;
  * @author chenjianrong-lhq 2019年07月12日 22:45:24
  * *
  * * Definition for singly-linked list.
- * * public class ListNode {
+ * * public class ListNodeBak {
  * *     int val;
- * *     ListNode next;
- * *     ListNode(int x) { val = x; }
+ * *     ListNodeBak next;
+ * *     ListNodeBak(int x) { val = x; }
  * * }
  * *step1: 拆解[7 ->10 ->7]  step2:[8 ->0 -> 7] 之后再反转 得到 [7 -> 0 -> 8]
  * question1: 单链表的反转
@@ -27,18 +27,18 @@ package focus.javabase.com.leetcode;
  */
 public class ListNodeT002 {
 
-    public static ListNode addTwoNumbers(ListNode listNode1, ListNode listNode2) {
-        ListNode tempNode = null;
-        ListNode prevNode = null;
-        ListNode headNode = null;
+    public static ListNodeBak addTwoNumbers(ListNodeBak listNodeBak1, ListNodeBak listNodeBak2) {
+        ListNodeBak tempNode = null;
+        ListNodeBak prevNode = null;
+        ListNodeBak headNode = null;
         int val1 = 0;
         int val2 = 0;
         int val = 0;
         int increment = 0;
         boolean flag = false;
-        while (listNode1 != null && listNode2 != null) {
-            val1 = listNode1.val;
-            val2 = listNode2.val;
+        while (listNodeBak1 != null && listNodeBak2 != null) {
+            val1 = listNodeBak1.val;
+            val2 = listNodeBak2.val;
             if (val1 + val2 >= 10) {
                 val = (val1 + val2) % 10;
                 increment = (val1 + val2) / 10;
@@ -46,28 +46,28 @@ public class ListNodeT002 {
                 val = val1 + val2;
             }
             if (flag) {
-                tempNode = new ListNode(val + increment);
+                tempNode = new ListNodeBak(val + increment);
                 increment = 0;
                 flag = false;
             } else {
-                tempNode = new ListNode(val);
+                tempNode = new ListNodeBak(val);
             }
             /**第一波优化，无需反转**/
-            if (listNode1.next == null && listNode2.next == null) {
+            if (listNodeBak1.next == null && listNodeBak2.next == null) {
                 headNode = tempNode;
             }
 
             tempNode.next = prevNode;
             prevNode = tempNode;
-            listNode1 = listNode1.next;
-            listNode2 = listNode2.next;
+            listNodeBak1 = listNodeBak1.next;
+            listNodeBak2 = listNodeBak2.next;
             if (increment != 0) {
                 flag = true;
             }
         }
 
         if (flag) {
-            tempNode = new ListNode(increment);
+            tempNode = new ListNodeBak(increment);
             tempNode.next = prevNode;
             headNode = tempNode;
         }
@@ -78,18 +78,18 @@ public class ListNodeT002 {
     /**
      * 考虑到位数不同的情况，应该先对原链表进行反转
      **/
-    public static ListNode addTwoNumbersOptimize(ListNode listNode1, ListNode listNode2) {
-        ListNode tempNode = null;
-        ListNode prevNode = null;
-        ListNode headNode = null;
+    public static ListNodeBak addTwoNumbersOptimize(ListNodeBak listNodeBak1, ListNodeBak listNodeBak2) {
+        ListNodeBak tempNode = null;
+        ListNodeBak prevNode = null;
+        ListNodeBak headNode = null;
         int val1 = 0;
         int val2 = 0;
         int val = 0;
         int increment = 0;
         boolean flag = false;
-        while (listNode1 != null && listNode2 != null) {
-            val1 = listNode1.val;
-            val2 = listNode2.val;
+        while (listNodeBak1 != null && listNodeBak2 != null) {
+            val1 = listNodeBak1.val;
+            val2 = listNodeBak2.val;
             if (val1 + val2 >= 10) {
                 val = (val1 + val2) % 10;
                 increment = (val1 + val2) / 10;
@@ -97,34 +97,34 @@ public class ListNodeT002 {
                 val = val1 + val2;
             }
             if (flag) {
-                tempNode = new ListNode(val + increment);
+                tempNode = new ListNodeBak(val + increment);
                 increment = 0;
                 flag = false;
             } else {
-                tempNode = new ListNode(val);
+                tempNode = new ListNodeBak(val);
             }
-            if (listNode1.next == null && listNode2.next == null) {
+            if (listNodeBak1.next == null && listNodeBak2.next == null) {
                 headNode = tempNode;
             }
 
-            if (listNode1.next == null && listNode2.next != null) {
-                listNode1.next = new ListNode(0);
+            if (listNodeBak1.next == null && listNodeBak2.next != null) {
+                listNodeBak1.next = new ListNodeBak(0);
             }
 
-            if (listNode1.next != null && listNode2.next == null) {
-                listNode2.next = new ListNode(0);
+            if (listNodeBak1.next != null && listNodeBak2.next == null) {
+                listNodeBak2.next = new ListNodeBak(0);
             }
             tempNode.next = prevNode;
             prevNode = tempNode;
-            listNode1 = listNode1.next;
-            listNode2 = listNode2.next;
+            listNodeBak1 = listNodeBak1.next;
+            listNodeBak2 = listNodeBak2.next;
             if (increment != 0) {
                 flag = true;
             }
         }
 
         if (flag) {
-            tempNode = new ListNode(increment);
+            tempNode = new ListNodeBak(increment);
             tempNode.next = prevNode;
             headNode = tempNode;
         }
@@ -134,19 +134,19 @@ public class ListNodeT002 {
     /**
      * 连续进位
      **/
-    public static ListNode addTwoNumbersCarryBit(ListNode listNode1, ListNode listNode2) {
-        ListNode tempNode = null;
-        ListNode prevNode = null;
-        ListNode headNode = null;
+    public static ListNodeBak addTwoNumbersCarryBit(ListNodeBak listNodeBak1, ListNodeBak listNodeBak2) {
+        ListNodeBak tempNode = null;
+        ListNodeBak prevNode = null;
+        ListNodeBak headNode = null;
         int val1 = 0;
         int val2 = 0;
         int val = 0;
         int increment = 0;
         int tempVal = 0;
         boolean flag = false;
-        while (listNode1 != null && listNode2 != null) {
-            val1 = listNode1.val;
-            val2 = listNode2.val;
+        while (listNodeBak1 != null && listNodeBak2 != null) {
+            val1 = listNodeBak1.val;
+            val2 = listNodeBak2.val;
             if (val1 + val2 >= 10) {
                 val = (val1 + val2) % 10;
                 increment = (val1 + val2) / 10;
@@ -154,27 +154,27 @@ public class ListNodeT002 {
                 val = val1 + val2;
             }
             if (flag) {
-                tempNode = new ListNode(val + increment);
+                tempNode = new ListNodeBak(val + increment);
                 increment = 0;
                 flag = false;
             } else {
-                tempNode = new ListNode(val);
+                tempNode = new ListNodeBak(val);
             }
 
             if (tempNode.val >= 10) {
                 increment = 1;
                 flag = true;
             }
-            if (listNode1.next == null && listNode2.next == null) {
+            if (listNodeBak1.next == null && listNodeBak2.next == null) {
                 headNode = tempNode;
             }
 
-            if (listNode1.next == null && listNode2.next != null) {
-                listNode1.next = new ListNode(0);
+            if (listNodeBak1.next == null && listNodeBak2.next != null) {
+                listNodeBak1.next = new ListNodeBak(0);
             }
 
-            if (listNode1.next != null && listNode2.next == null) {
-                listNode2.next = new ListNode(0);
+            if (listNodeBak1.next != null && listNodeBak2.next == null) {
+                listNodeBak2.next = new ListNodeBak(0);
             }
 
             tempVal = tempNode.val;
@@ -183,23 +183,23 @@ public class ListNodeT002 {
                 prevNode = tempNode;
             }
 
-            listNode1 = listNode1.next;
-            listNode2 = listNode2.next;
+            listNodeBak1 = listNodeBak1.next;
+            listNodeBak2 = listNodeBak2.next;
             if (increment != 0) {
                 flag = true;
             }
         }
 
         if (flag && tempVal < 10) {
-            tempNode = new ListNode(increment);
+            tempNode = new ListNodeBak(increment);
             tempNode.next = prevNode;
             headNode = tempNode;
         }
 
         if (tempVal >= 10) {
-            tempNode = new ListNode(1);
+            tempNode = new ListNodeBak(1);
             tempVal = tempVal % 10;
-            tempNode.next = new ListNode(tempVal);
+            tempNode.next = new ListNodeBak(tempVal);
             tempNode.next.next = prevNode;
             headNode = tempNode;
         }
@@ -211,48 +211,48 @@ public class ListNodeT002 {
     /**
      * 位数不等，连续进位
      **/
-    public static ListNode addTwoNumbersContinueCarryBit(ListNode listNode1, ListNode listNode2) {
-        ListNode tempNode = null;
-        ListNode prevNode = null;
-        ListNode headNode = null;
-        ListNode bitNode = null;
-        if (listNode1 == null) {
-            return listNode2;
+    public static ListNodeBak addTwoNumbersContinueCarryBit(ListNodeBak listNodeBak1, ListNodeBak listNodeBak2) {
+        ListNodeBak tempNode = null;
+        ListNodeBak prevNode = null;
+        ListNodeBak headNode = null;
+        ListNodeBak bitNode = null;
+        if (listNodeBak1 == null) {
+            return listNodeBak2;
         }
-        if (listNode2 == null) {
-            return listNode1;
+        if (listNodeBak2 == null) {
+            return listNodeBak1;
         }
-        while (listNode1 != null && listNode2 != null) {
-            tempNode = new ListNode(listNode1.val + listNode2.val);
+        while (listNodeBak1 != null && listNodeBak2 != null) {
+            tempNode = new ListNodeBak(listNodeBak1.val + listNodeBak2.val);
             if (prevNode != null && prevNode.val >= 10) {
                 int val = prevNode.val / 10;
-                tempNode = new ListNode(val + listNode1.val + listNode2.val);
+                tempNode = new ListNodeBak(val + listNodeBak1.val + listNodeBak2.val);
                 prevNode.val = bitNode.val;
             }
-            if (listNode1.next == null && listNode2.next == null) {
+            if (listNodeBak1.next == null && listNodeBak2.next == null) {
                 headNode = tempNode;
                 break;
             }
 
-            if (listNode1.next == null && listNode2.next != null) {
-                listNode1.next = new ListNode(0);
+            if (listNodeBak1.next == null && listNodeBak2.next != null) {
+                listNodeBak1.next = new ListNodeBak(0);
             }
 
-            if (listNode1.next != null && listNode2.next == null) {
-                listNode2.next = new ListNode(0);
+            if (listNodeBak1.next != null && listNodeBak2.next == null) {
+                listNodeBak2.next = new ListNodeBak(0);
             }
             tempNode.next = prevNode;
             prevNode = tempNode;
             if (tempNode.val >= 10) {
-                bitNode = new ListNode(tempNode.val % 10);
+                bitNode = new ListNodeBak(tempNode.val % 10);
             }
-            listNode1 = listNode1.next;
-            listNode2 = listNode2.next;
+            listNodeBak1 = listNodeBak1.next;
+            listNodeBak2 = listNodeBak2.next;
         }
 
         if (tempNode.val >= 10) {
-            headNode = new ListNode(1);
-            headNode.next = new ListNode(tempNode.val % 10);
+            headNode = new ListNodeBak(1);
+            headNode.next = new ListNodeBak(tempNode.val % 10);
             headNode.next.next = prevNode;
         } else {
             tempNode.next = prevNode;
@@ -261,16 +261,16 @@ public class ListNodeT002 {
     }
 
     /**
-     * @return focus.javabase.com.leetcode.ListNode
+     * @return focus.javabase.com.leetcode.ListNodeBak
      * @Author chenjianrong-lhq
      * @Description 单链表的反转
      * @Date 2019-07-13 21:35
      * @Param [listNode]
      **/
-    public static ListNode reverse(ListNode head) {
-        ListNode reverseHead = head;
-        ListNode prevNode = null;
-        ListNode nextNode = null;
+    public static ListNodeBak reverse(ListNodeBak head) {
+        ListNodeBak reverseHead = head;
+        ListNodeBak prevNode = null;
+        ListNodeBak nextNode = null;
         while (head != null) {
             nextNode = head.next;
             if (head.next == null) {
@@ -287,18 +287,18 @@ public class ListNodeT002 {
     /**
      * 标准答案,无需反转
      **/
-    public static ListNode addTwoNumbersAnswer(ListNode listNode1, ListNode listNode2) {
-        ListNode p = listNode1, q = listNode2;
+    public static ListNodeBak addTwoNumbersAnswer(ListNodeBak listNodeBak1, ListNodeBak listNodeBak2) {
+        ListNodeBak p = listNodeBak1, q = listNodeBak2;
         /**这个设计得巧妙，成功避开反转,利用哑节点记录起始相加节点的位置**/
-        ListNode headNode = new ListNode(0);
+        ListNodeBak headNode = new ListNodeBak(0);
         int carry = 0, sum = 0;
-        ListNode curr = headNode;
+        ListNodeBak curr = headNode;
         while (p != null || q != null) {
             int pVal = (p == null) ? 0 : p.val;
             int qVal = (q == null) ? 0 : q.val;
             sum = carry + pVal + qVal;
             carry = sum / 10;
-            curr.next = new ListNode(sum % 10);
+            curr.next = new ListNodeBak(sum % 10);
             curr = curr.next;
             if (p != null) {
                 p = p.next;
@@ -309,7 +309,7 @@ public class ListNodeT002 {
         }
 
         if (carry > 0) {
-            curr.next = new ListNode(carry);
+            curr.next = new ListNodeBak(carry);
         }
 
         return headNode.next;
@@ -318,11 +318,11 @@ public class ListNodeT002 {
 }
 
 
-class ListNode {
+class ListNodeBak {
     int val;
-    ListNode next;
+    ListNodeBak next;
 
-    ListNode(int x) {
+    ListNodeBak(int x) {
         val = x;
     }
 }

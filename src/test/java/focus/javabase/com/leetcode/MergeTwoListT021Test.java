@@ -42,15 +42,15 @@ public class MergeTwoListT021Test extends AbstractTest {
 
 //    @Before
 //    public void setUp() throws Exception {
-//        l1 = new MergeTwoListT021.ListNode(2);
+//        l1 = new MergeTwoListT021.ListNodeBak(2);
 //
-//        l2 = new MergeTwoListT021.ListNode(1);
+//        l2 = new MergeTwoListT021.ListNodeBak(1);
 //
 //        int[] excepeArr = new int[]{1, 2};
 //        // 如何生成单向链表
-//        MergeTwoListT021.ListNode first = null;
+//        MergeTwoListT021.ListNodeBak first = null;
 //        for (int i = 0; i < excepeArr.length; i++) {
-//            first = new MergeTwoListT021.ListNode(excepeArr[i]);
+//            first = new MergeTwoListT021.ListNodeBak(excepeArr[i]);
 //            if (exceptListNode == null) {
 //                exceptListNode = first;
 //            }
@@ -61,11 +61,11 @@ public class MergeTwoListT021Test extends AbstractTest {
 
 //    @Before
 //    public void setUp() throws Exception {
-//        l1 = new MergeTwoListT021.ListNode(-9);
-//        l1.next = new MergeTwoListT021.ListNode(3);
+//        l1 = new MergeTwoListT021.ListNodeBak(-9);
+//        l1.next = new MergeTwoListT021.ListNodeBak(3);
 //
-//        l2 = new MergeTwoListT021.ListNode(5);
-//        l2.next = new MergeTwoListT021.ListNode(7);
+//        l2 = new MergeTwoListT021.ListNodeBak(5);
+//        l2.next = new MergeTwoListT021.ListNodeBak(7);
 //
 //        excepetArr = new int[]{-9, 3, 5, 7};
 //
@@ -105,15 +105,15 @@ public class MergeTwoListT021Test extends AbstractTest {
 
 //    @Before
 //    public void setUp() throws Exception {
-//        l1 = new MergeTwoListT021.ListNode(-10);
-//        l1.next = new MergeTwoListT021.ListNode(-10);
-//        l1.next.next = new MergeTwoListT021.ListNode(-9);
-//        l1.next.next.next = new MergeTwoListT021.ListNode(-4);
-//        l1.next.next.next.next = new MergeTwoListT021.ListNode(1);
-//        l1.next.next.next.next.next = new MergeTwoListT021.ListNode(6);
-//        l1.next.next.next.next.next.next = new MergeTwoListT021.ListNode(6);
+//        l1 = new MergeTwoListT021.ListNodeBak(-10);
+//        l1.next = new MergeTwoListT021.ListNodeBak(-10);
+//        l1.next.next = new MergeTwoListT021.ListNodeBak(-9);
+//        l1.next.next.next = new MergeTwoListT021.ListNodeBak(-4);
+//        l1.next.next.next.next = new MergeTwoListT021.ListNodeBak(1);
+//        l1.next.next.next.next.next = new MergeTwoListT021.ListNodeBak(6);
+//        l1.next.next.next.next.next.next = new MergeTwoListT021.ListNodeBak(6);
 //
-//        l2 = new MergeTwoListT021.ListNode(-7);
+//        l2 = new MergeTwoListT021.ListNodeBak(-7);
 //
 //        excepetArr = new int[]{-10, -10, -9, -7, -4, 1, 6, 6};
 //    }

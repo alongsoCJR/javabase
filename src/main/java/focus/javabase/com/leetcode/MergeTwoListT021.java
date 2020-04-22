@@ -140,7 +140,7 @@ public class MergeTwoListT021 {
     /**
      *else if (l1.next == null) {
      *                 if (l1.val > l2.val) {
-     *                     result.next = new ListNode(l2.val);
+     *                     result.next = new ListNodeBak(l2.val);
      *                     l2 = l2.next;
      *                     result = result.next;
      *                 } else {
@@ -152,7 +152,7 @@ public class MergeTwoListT021 {
      *
      *             } else if (l2.next == null) {
      *                 if (l2.val > l1.val) {
-     *                     result.next = new ListNode(l1.val);
+     *                     result.next = new ListNodeBak(l1.val);
      *                     l1 = l1.next;
      *                     result = result.next;
      *                 } else {

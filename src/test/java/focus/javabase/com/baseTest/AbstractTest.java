@@ -1,5 +1,6 @@
 package focus.javabase.com.baseTest;
 
+import focus.javabase.com.leetcode.base.ListNode;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.After;
@@ -31,6 +32,11 @@ public abstract class AbstractTest {
     public static String inputStr = "";
     public static String outputStr = "";
     public static String exceptedStr = "";
+
+    /** ListNode l1**/
+    public static ListNode inputList = null;
+    public static ListNode exceptedList = null;
+    public static ListNode outputList = null;
 
 
     long startTime = 0L;
