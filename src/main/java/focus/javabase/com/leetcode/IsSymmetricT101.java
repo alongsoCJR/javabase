@@ -23,16 +23,24 @@ public class IsSymmetricT101 {
         if (root == null) {
             return false;
         }
-        Stack<Integer> stack = new Stack<>();
-        ArrayDeque<Integer> deque = new ArrayDeque();
+        Stack<TreeNode> stack = new Stack<>();
+        Deque<TreeNode> listQ = new LinkedList<>();
         addStack(root.left, stack);
-        addQuene(root.right, deque);
-        if (stack.size() != deque.size()) {
+        addQuene(root.right, listQ);
+        if (stack.size() != listQ.size()) {
             return false;
         }
         while (!stack.empty()) {
-            int m = stack.pop();
-            if (m != deque.poll()) {
+            TreeNode p = stack.pop();
+            TreeNode q = listQ.poll();
+            if (p == null && q == null) {
+                continue;
+            }
+            if (p == null || q == null) {
+                return false;
+            }
+
+            if (p.val != q.val) {
                 return false;
             }
         }
@@ -70,7 +78,19 @@ public class IsSymmetricT101 {
 
     // 递归
     public static boolean isSymmetric2(TreeNode root) {
-        return false;
+        return isMirror(root, root);
+    }
+
+    private static boolean isMirror(TreeNode root, TreeNode root1) {
+        if (root == null && root1 == null) {
+            return true;
+        }
+        if (root == null || root1 == null) {
+            return false;
+        }
+        return root.val == root1.val &&
+                isMirror(root.left, root1.right) &&
+                isMirror(root.right, root1.left);
     }
 
     public static boolean checkSame(TreeNode p, TreeNode q) {
@@ -84,23 +104,25 @@ public class IsSymmetricT101 {
     }
 
     // 先序遍历 递归
-    public static void addStack(TreeNode root, Stack<Integer> stack) {
+    public static void addStack(TreeNode root, Stack<TreeNode> stack) {
         if (root == null) {
+            stack.push(root);
             return;
         }
         addStack(root.left, stack);
-        stack.push(root.val);
+        stack.push(root);
         addStack(root.right, stack);
 
     }
 
 
-    public static void addQuene(TreeNode root, ArrayDeque<Integer> deque) {
+    public static void addQuene(TreeNode root, Deque<TreeNode> deque) {
         if (root == null) {
+            deque.add(root);
             return;
         }
         addQuene(root.left, deque);
-        deque.offer(root.val);
+        deque.offer(root);
         addQuene(root.right, deque);
 
     }

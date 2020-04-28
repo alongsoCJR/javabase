@@ -44,7 +44,7 @@ import static org.junit.Assert.*;
 // 深度优先搜索=先序遍历    广度优先搜索
 public class IsSymmetricT101Test extends AbstractTest {
 
-    //    @Before
+        @Before
     public void setUp() throws Exception {
         inputTree = new TreeNode(1);
         inputTree.left = new TreeNode(2);
@@ -58,7 +58,7 @@ public class IsSymmetricT101Test extends AbstractTest {
         exceptedBoolean = true;
     }
 
-    //    @Before
+//        @Before
     public void setUp1() throws Exception {
         inputTree = new TreeNode(1);
         inputTree.left = new TreeNode(2);
@@ -82,7 +82,7 @@ public class IsSymmetricT101Test extends AbstractTest {
 // /   /
 //2   2
 
-    @Before
+//    @Before
     public void setUp2() throws Exception {
         inputTree = new TreeNode(1);
         inputTree.left = new TreeNode(2);
@@ -94,9 +94,15 @@ public class IsSymmetricT101Test extends AbstractTest {
         exceptedBoolean = false;
     }
 
+    //info
+    //			Wrong Answer:
+    //			input:[2,3,3,4,5,null,4]
+    //			Output:true
+    //			Expected:false
+    //			stdout:
     @Test
     public void isSymmetric() {
-        Assert.assertEquals(exceptedBoolean, IsSymmetricT101.isSymmetric1(inputTree));
+        Assert.assertEquals(exceptedBoolean, IsSymmetricT101.isSymmetric2(inputTree));
 
     }
 }
