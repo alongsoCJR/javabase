@@ -1,5 +1,6 @@
 package focus.javabase.com.leetcode;
 
+import focus.javabase.com.leetcode.base.ListNode;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -7,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ListNodeBakT002Test {
+public class ListNodeT002Test {
 
     List<Integer> targetList = new ArrayList<>();
 
@@ -17,20 +18,20 @@ public class ListNodeBakT002Test {
     @Test
     public void addTwoNumbers() {
         /**[2,4,3]**/
-        ListNodeBak listNodeBak1 = new ListNodeBak(2);
-        listNodeBak1.next = new ListNodeBak(4);
-        listNodeBak1.next.next = new ListNodeBak(3);
+        ListNode ListNode1 = new ListNode(2);
+        ListNode1.next = new ListNode(4);
+        ListNode1.next.next = new ListNode(3);
 
         /**[5,6,4]**/
-        ListNodeBak listNodeBak2 = new ListNodeBak(5);
-        listNodeBak2.next = new ListNodeBak(6);
-        listNodeBak2.next.next = new ListNodeBak(4);
+        ListNode ListNode2 = new ListNode(5);
+        ListNode2.next = new ListNode(6);
+        ListNode2.next.next = new ListNode(4);
 
-        ListNodeBak resultListNodeBak = ListNodeT002.addTwoNumbersContinueCarryBit(listNodeBak1, listNodeBak2);
-        while (resultListNodeBak != null) {
+        ListNode resultListNode = ListNodeT002.addTwoNumbersContinueCarryBit(ListNode1, ListNode2);
+        while (resultListNode != null) {
             /**except output [7,0,8]**/
-            targetList.add(resultListNodeBak.val);
-            resultListNodeBak = resultListNodeBak.next;
+            targetList.add(resultListNode.val);
+            resultListNode = resultListNode.next;
         }
 
         if (!varifyListOrder(targetList, Arrays.asList(new Integer[]{7, 0, 8}))) {
@@ -44,16 +45,16 @@ public class ListNodeBakT002Test {
     @Test
     public void addTwoNumbers1() {
         /**[5]**/
-        ListNodeBak listNodeBak1 = new ListNodeBak(5);
+        ListNode ListNode1 = new ListNode(5);
 
         /**[5]**/
-        ListNodeBak listNodeBak2 = new ListNodeBak(5);
+        ListNode ListNode2 = new ListNode(5);
 
-        ListNodeBak resultListNodeBak = ListNodeT002.addTwoNumbersContinueCarryBit(listNodeBak1, listNodeBak2);
-        while (resultListNodeBak != null) {
+        ListNode resultListNode = ListNodeT002.addTwoNumbersContinueCarryBit(ListNode1, ListNode2);
+        while (resultListNode != null) {
             /**except output [0,1]**/
-            targetList.add(resultListNodeBak.val);
-            resultListNodeBak = resultListNodeBak.next;
+            targetList.add(resultListNode.val);
+            resultListNode = resultListNode.next;
         }
 
         if (!varifyListOrder(targetList, Arrays.asList(new Integer[]{0, 1}))) {
@@ -67,17 +68,17 @@ public class ListNodeBakT002Test {
     @Test
     public void addTwoNumbers2() {
         /**[3，5]**/
-        ListNodeBak listNodeBak1 = new ListNodeBak(3);
-        listNodeBak1.next = new ListNodeBak(5);
+        ListNode ListNode1 = new ListNode(3);
+        ListNode1.next = new ListNode(5);
 
         /**[5]**/
-        ListNodeBak listNodeBak2 = new ListNodeBak(5);
+        ListNode ListNode2 = new ListNode(5);
 
-        ListNodeBak resultListNodeBak = ListNodeT002.addTwoNumbersContinueCarryBit(listNodeBak1, listNodeBak2);
-        while (resultListNodeBak != null) {
+        ListNode resultListNode = ListNodeT002.addTwoNumbersContinueCarryBit(ListNode1, ListNode2);
+        while (resultListNode != null) {
             /**except output [0,4]**/
-            targetList.add(resultListNodeBak.val);
-            resultListNodeBak = resultListNodeBak.next;
+            targetList.add(resultListNode.val);
+            resultListNode = resultListNode.next;
         }
 
         if (!varifyListOrder(targetList, Arrays.asList(new Integer[]{8, 5}))) {
@@ -92,17 +93,17 @@ public class ListNodeBakT002Test {
     @Test
     public void addTwoNumbers3() {
         /**[9,9]**/
-        ListNodeBak listNodeBak1 = new ListNodeBak(9);
-        listNodeBak1.next = new ListNodeBak(9);
+        ListNode ListNode1 = new ListNode(9);
+        ListNode1.next = new ListNode(9);
 
         /**[1]**/
-        ListNodeBak listNodeBak2 = new ListNodeBak(1);
+        ListNode ListNode2 = new ListNode(1);
 
-        ListNodeBak resultListNodeBak = ListNodeT002.addTwoNumbersContinueCarryBit(listNodeBak1, listNodeBak2);
-        while (resultListNodeBak != null) {
+        ListNode resultListNode = ListNodeT002.addTwoNumbersContinueCarryBit(ListNode1, ListNode2);
+        while (resultListNode != null) {
             /**except output [0,0,1]**/
-            targetList.add(resultListNodeBak.val);
-            resultListNodeBak = resultListNodeBak.next;
+            targetList.add(resultListNode.val);
+            resultListNode = resultListNode.next;
         }
 
         if (!varifyListOrder(targetList, Arrays.asList(new Integer[]{0, 0, 1}))) {
@@ -117,18 +118,18 @@ public class ListNodeBakT002Test {
     @Test
     public void addTwoNumbers4() {
         /**[8,9,9]**/
-        ListNodeBak listNodeBak1 = new ListNodeBak(8);
-        listNodeBak1.next = new ListNodeBak(9);
-        listNodeBak1.next.next = new ListNodeBak(9);
+        ListNode ListNode1 = new ListNode(8);
+        ListNode1.next = new ListNode(9);
+        ListNode1.next.next = new ListNode(9);
 
         /**[1]**/
-        ListNodeBak listNodeBak2 = new ListNodeBak(2);
+        ListNode ListNode2 = new ListNode(2);
 
-        ListNodeBak resultListNodeBak = ListNodeT002.addTwoNumbersContinueCarryBit(listNodeBak1, listNodeBak2);
-        while (resultListNodeBak != null) {
+        ListNode resultListNode = ListNodeT002.addTwoNumbersContinueCarryBit(ListNode1, ListNode2);
+        while (resultListNode != null) {
             /**except output [0,0,0,1]**/
-            targetList.add(resultListNodeBak.val);
-            resultListNodeBak = resultListNodeBak.next;
+            targetList.add(resultListNode.val);
+            resultListNode = resultListNode.next;
         }
 
         if (!varifyListOrder(targetList, Arrays.asList(new Integer[]{0, 0, 0, 1}))) {
@@ -142,16 +143,16 @@ public class ListNodeBakT002Test {
     @Test
     public void addTwoNumbers5() {
         /**[8,9,9]**/
-        ListNodeBak listNodeBak1 = new ListNodeBak(8);
-        listNodeBak1.next = new ListNodeBak(9);
-        listNodeBak1.next.next = new ListNodeBak(9);
+        ListNode ListNode1 = new ListNode(8);
+        ListNode1.next = new ListNode(9);
+        ListNode1.next.next = new ListNode(9);
 
 
-        ListNodeBak resultListNodeBak = ListNodeT002.addTwoNumbersContinueCarryBit(listNodeBak1, null);
-        while (resultListNodeBak != null) {
+        ListNode resultListNode = ListNodeT002.addTwoNumbersContinueCarryBit(ListNode1, null);
+        while (resultListNode != null) {
             /**except output [8，9,9]**/
-            targetList.add(resultListNodeBak.val);
-            resultListNodeBak = resultListNodeBak.next;
+            targetList.add(resultListNode.val);
+            resultListNode = resultListNode.next;
         }
 
         if (!varifyListOrder(targetList, Arrays.asList(new Integer[]{8, 9, 9}))) {

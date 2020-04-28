@@ -24,7 +24,7 @@ public class AStringToIntT008Test {
         assertEquals(1, AStringToIntT008.myAtoi("+1"));
 
         /**如何处理这种字符呀，感觉这种字符跟Long类型越界带来冲突**/
-        assertEquals(13678217, AStringToIntT008.myAtoi("0000000013678217"));
+        assertEquals(13678217, AStringToIntT008.myAtoi2("0000000013678217"));
     }
 
 
