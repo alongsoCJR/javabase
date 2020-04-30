@@ -7,6 +7,9 @@ import org.apache.commons.logging.LogFactory;
 import org.junit.After;
 import org.junit.Before;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author chenjianrong-lhq 2019年08月07日 17:44:12
  * @Description: 测试抽象类
@@ -46,6 +49,14 @@ public abstract class AbstractTest {
     public static TreeNode outputTree = null;
 
     public Boolean exceptedBoolean = null;
+
+    /** List<T>**/
+    public static List inputArrayList = new ArrayList<>();
+    public static List exceptedArrayList = new ArrayList<>();
+    public static List outputArrayList = new ArrayList<>();
+    public static int[][] inputTwoArr = new int[][]{};
+    public static int[][] outputTwoArr = new int[][]{};
+
 
     long startTime = 0L;
     long endTime = 0L;
