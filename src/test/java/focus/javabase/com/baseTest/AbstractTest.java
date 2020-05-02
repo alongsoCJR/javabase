@@ -43,7 +43,7 @@ public abstract class AbstractTest {
     public static ListNode outputList = null;
 
 
-    /** ListNode l1**/
+    /** TreeNode **/
     public static TreeNode inputTree = null;
     public static TreeNode exceptedTree = null;
     public static TreeNode outputTree = null;
