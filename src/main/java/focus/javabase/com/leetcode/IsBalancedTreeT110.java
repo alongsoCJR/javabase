@@ -65,7 +65,7 @@ public class IsBalancedTreeT110 {
 
     // 参考
     public static boolean isBalanced(TreeNode root) {
-        if(root==null){
+        if (root == null) {
             return true;
         }
 
