@@ -37,13 +37,13 @@ import static org.junit.Assert.*;
 //
 public class MaxProfitT121Test extends AbstractTest {
 
-    //    @Before
+    @Before
     public void setUp() throws Exception {
         inputNums = new int[]{7, 1, 5, 3, 6, 4};
         exceptedNum = 5;
     }
 
-    @Before
+    //    @Before
     public void setUp1() throws Exception {
         inputNums = new int[]{7, 6, 4, 3, 1};
         exceptedNum = 0;
@@ -51,7 +51,7 @@ public class MaxProfitT121Test extends AbstractTest {
 
     @Test
     public void maxProfit() {
-        outputNum = MaxProfitT121.maxProfit(inputNums);
+        outputNum = MaxProfitT121.maxProfit1(inputNums);
         Assert.assertEquals(exceptedNum, outputNum);
     }
 }
