@@ -71,6 +71,6 @@ public class IsPalindromeT125Test extends AbstractTest {
 //			stdout:
     @Test
     public void isPalindrome() {
-        Assert.assertEquals(exceptedBoolean, IsPalindromeT125.isPalindrome(inputStr));
+        Assert.assertEquals(exceptedBoolean, IsPalindromeT125.isPalindrome3(inputStr));
     }
 }

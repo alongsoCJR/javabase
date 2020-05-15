@@ -66,4 +66,44 @@ public class IsPalindromeT125 {
         return true;
     }
 
+
+    // 参考
+    public static boolean isPalindrome2(String s) {
+        assert s != null;
+        char[] arr = s.toUpperCase().toCharArray();
+        int i = 0, j = arr.length - 1;
+        while (i < j) {
+            char iChar = arr[i];
+            char jChar = arr[j];
+            if (!Character.isLetterOrDigit(iChar)) {
+                i++;
+                continue;
+            }
+            if (!Character.isLetterOrDigit(jChar)) {
+                j--;
+                continue;
+            }
+            if (iChar != jChar) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+
+    // 参考
+    public static boolean isPalindrome3(String s) {
+        s = s.toLowerCase().replaceAll("[^0-9a-z]", "");
+        char[] c = s.toCharArray();
+        int i = 0, j = c.length - 1;
+        while (i < j) {
+            if (c[i] != c[j]) {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
 }
