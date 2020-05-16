@@ -72,7 +72,7 @@ public class HasCycleT141Test extends AbstractTest {
         inputList = new ListNode(3);
         inputList.next = posNode;
         inputList.next.next = new ListNode(0);
-        inputList.next.next.next = new ListNode(4);
+        inputList.next.next.next = new ListNode(-4);
         inputList.next.next.next.next = posNode;
 
         exceptedBoolean = true;
