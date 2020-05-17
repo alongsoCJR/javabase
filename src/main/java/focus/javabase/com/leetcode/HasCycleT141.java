@@ -9,6 +9,7 @@ import focus.javabase.com.leetcode.base.ListNode;
  **/
 public class HasCycleT141 {
 
+    // 3,2,0,-4
     public static boolean hasCycle(ListNode head) {
         ListNode point1 = head;
         ListNode point2 = head;
