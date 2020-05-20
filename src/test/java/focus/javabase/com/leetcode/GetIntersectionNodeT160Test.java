@@ -110,7 +110,7 @@ public class GetIntersectionNodeT160Test extends AbstractTest {
 
     @Test
     public void getIntersectionNode() {
-        outputList = GetIntersectionNodeT160.getIntersectionNode1(inputList, inputList2);
+        outputList = GetIntersectionNodeT160.getIntersectionNode2(inputList, inputList2);
         Assert.assertEquals(exceptedList, outputList);
     }
 

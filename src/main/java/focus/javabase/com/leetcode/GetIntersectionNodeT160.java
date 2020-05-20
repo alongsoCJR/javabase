@@ -27,7 +27,7 @@ public class GetIntersectionNodeT160 {
         return null;
     }
 
-    // 参考  null==null 返回true
+    // 参考  null==null 返回true(时间复杂度O(n^2))
     public static ListNode getIntersectionNode1(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) {
             return null;
@@ -38,6 +38,21 @@ public class GetIntersectionNodeT160 {
         while (pointA != pointB) {
             pointA = (pointA == null ? headA : pointA.next);
             pointB = (pointB == null ? headB : pointB.next);
+        }
+        return pointA;
+    }
+
+    // 参考 时间复杂度O(M+N)
+    public static ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
+        if (headA == null || headB == null) {
+            return null;
+        }
+        ListNode pointA = headA;
+        ListNode pointB = headB;
+
+        while (pointA != pointB) {
+            pointA = (pointA == null ? headB : pointA.next);
+            pointB = (pointB == null ? headA : pointB.next);
         }
         return pointA;
     }
