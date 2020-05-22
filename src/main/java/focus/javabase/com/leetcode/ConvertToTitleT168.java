@@ -1,5 +1,7 @@
 package focus.javabase.com.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class ConvertToTitleT168 {
@@ -57,6 +59,27 @@ public class ConvertToTitleT168 {
         }
         return ret;
     }
+
+    // 优化，n--,（A-Z）->(0-25) map映射
+    public static String convertToTitle2(int n) {
+        Map<Integer, Character> charMap = new HashMap<>();
+        char c = ' ';
+        for (int i = 0; i <= 25; i++) {
+            c = (char) ('A' + i);
+            charMap.put(i, c);
+        }
+        String ret = "";
+
+        while (n != 0) {
+            n--;
+            int mod = n % 26;
+            ret = charMap.get(mod) + ret;
+            n = n / 26;
+        }
+        return ret;
+    }
+
+
     //while (div >= 1) {
     //            int mod = div % 26;
     //            if (mod == 0) {
@@ -73,7 +96,7 @@ public class ConvertToTitleT168 {
         while (scanner.hasNextInt()) {
             int a = scanner.nextInt();
 //            String binary = getBinary(a);
-            String ret = convertToTitle1(a);
+            String ret = convertToTitle2(a);
 //            System.out.println(binary);
             System.out.println(ret);
         }

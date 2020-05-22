@@ -31,7 +31,7 @@ import static org.junit.Assert.*;
 
 public class TwoSumT167Test extends AbstractTest {
 
-    //    @Before
+    //        @Before
     public void setUp() throws Exception {
         inputNums = new int[]{2, 7, 11, 15};
         inputNum = 9;
@@ -56,7 +56,7 @@ public class TwoSumT167Test extends AbstractTest {
     //			stdout:  Map做了一个去重
     @Test
     public void twoSum() {
-        outputNums = TwoSumT167.twoSum1(inputNums, inputNum);
+        outputNums = TwoSumT167.twoSum2(inputNums, inputNum);
         Assert.assertArrayEquals(exceptedNums, outputNums);
     }
 
