@@ -36,6 +36,7 @@ public class DuckTest extends AbstractTest {
         duck.display();
         duck.performFly();
         duck.performQuack();
+        duck.swim();
 
         System.out.println("============");
     }
