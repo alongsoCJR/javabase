@@ -1,6 +1,4 @@
-package focus.javabase.com.pattern.factory;
-
-import focus.javabase.com.pattern.factory.simplefactory.SimplePizzaFactory;
+package focus.javabase.com.pattern.factory.simplefactory;
 
 /**
  * @Author chenjianrong-lhq
@@ -16,8 +14,11 @@ public class PizzaStore {
 
         // 不变的一部分
         pizza.preprae();
-        pizza.back();
+        // 烘烤
+        pizza.bake();
+        // 切片
         pizza.cut();
+        // 装盒
         pizza.box();
         return pizza;
     }

@@ -1,4 +1,4 @@
-package focus.javabase.com.pattern.factory;
+package focus.javabase.com.pattern.factory.factorymethod;
 
 import java.util.ArrayList;
 
@@ -28,7 +28,7 @@ public abstract class Pizza {
     }
 
 
-    void back() {
+    void bake() {
         System.out.println("Bake for 25 minutes at 350");
     }
 

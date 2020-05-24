@@ -1,4 +1,4 @@
-package focus.javabase.com.pattern.factory;
+package focus.javabase.com.pattern.factory.simplefactory;
 
 public class Application {
 
@@ -10,7 +10,7 @@ public class Application {
         pizzaStore.orderPizza("clam");
 
         System.out.println("===================");
-        pizzaStore.orderPizza("veggie");
+        pizzaStore.orderPizza("peperoni");
 
         System.out.println("===================");
         pizzaStore.orderPizza("veggi");
