@@ -1,5 +1,7 @@
 package focus.javabase.com.pattern.factory;
 
+import focus.javabase.com.pattern.factory.simplefactory.SimplePizzaFactory;
+
 /**
  * @Author chenjianrong-lhq
  * @Description pizza商店
@@ -9,15 +11,8 @@ public class PizzaStore {
 
     Pizza orderPizza(String type) {
 
-        Pizza pizza = null;
         // 变化的一部分
-        if ("cheese".equals(type)) {
-            pizza = new CheesePizza();
-        } else if ("peperoni".equals(type)) {
-            pizza = new PepperoniPizza();
-        } else if ("clam".equals(type)) {
-            pizza = new ClamPizza();
-        }
+        Pizza pizza = new SimplePizzaFactory().create(type);
 
         // 不变的一部分
         pizza.preprae();
