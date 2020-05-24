@@ -1,10 +1,8 @@
 package focus.javabase.com.pattern.factory.simplefactory;
 
-import focus.javabase.com.pattern.factory.*;
-
 /**
  * @Author chenjianrong-lhq
- * @Description 简单工厂
+ * @Description 简单工厂 1.有加盟店加入,不容易扩展   2.类的依赖度太高了，新增一种类型的，需要改代码
  * @Date 2020-05-24 15:41
  **/
 public class SimplePizzaFactory {
