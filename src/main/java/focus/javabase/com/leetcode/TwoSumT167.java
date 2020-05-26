@@ -8,7 +8,7 @@ public class TwoSumT167 {
 
 
     //{2, 7, 11, 15}  {7,2,-2,-6}
-    // 没有利用有序这个条件
+    // 没有利用有序这个条件  时间复杂度（O(n)）
     public static int[] twoSum(int[] numbers, int target) {
         Map<Integer, Integer> numMap = new HashMap<>();
         for (int i = 0; i < numbers.length; i++) {
@@ -53,4 +53,23 @@ public class TwoSumT167 {
         return -1;
     }
 
+
+    // 参考     {2, 7, 11, 15}
+    public static int[] twoSum2(int[] numbers, int target) {
+
+        int left = 0;
+        int right = numbers.length - 1;
+        int sum = 0;
+        while (left < right) {
+            sum = numbers[left] + numbers[right];
+            if (target == sum) {
+                return new int[]{left + 1, right + 1};
+            } else if (target < sum) {
+                right--;
+            } else if (target > sum) {
+                left++;
+            }
+        }
+        return null;
+    }
 }
