@@ -12,6 +12,7 @@ public class TitleToNumberT171 {
         while (!"".equals(s)) {
             char c = s.charAt(s.length() - 1);
             a = c - 'A' + 1;
+            // pow效率不高
             b = (int) Math.pow(26, i);
             ret += a * b;
             s = s.substring(0, s.length() - 1);
