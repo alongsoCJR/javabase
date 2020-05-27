@@ -8,18 +8,16 @@ public class TrailingZeroesT172 {
 
     // 超出时间限制
     public static int trailingZeroes(int n) {
-        String result = function(new BigInteger(n + "")).toString();
-        if ("0".equals(result)) {
-            return 0;
-        }
-        char c = ' ';
+        BigInteger ten = new BigInteger("10");
+        BigInteger result = function(new BigInteger(n + ""));
         int ret = 0;
-        for (int i = result.length() - 1; i >= 0; i--) {
-            c = result.charAt(i);
-            if (c != '0') {
+        while (ten.compareTo(result) < 0) {
+            if (BigInteger.ZERO.compareTo(result.mod(ten)) == 0) {
+                ret++;
+                result = result.divide(ten);
+            } else {
                 break;
             }
-            ret++;
         }
         return ret;
     }
