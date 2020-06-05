@@ -24,5 +24,13 @@ public class RobT198 {
         return 0;
     }
 
+    // 暴力优化
+    public static int rob1(int[] nums) {
+        if (nums.length == 0) return 0;
+        int middle = nums.length >> 1;
+        int leftMax = robByRecursion(nums, 0, middle - 1);
+        int rightMax = robByRecursion(nums, middle + 1, nums.length - 1);
+        return Integer.max(nums[middle] + robByRecursion(nums, 0, middle - 2) + robByRecursion(nums, middle + 2, nums.length - 1), leftMax + rightMax);
+    }
 
 }
