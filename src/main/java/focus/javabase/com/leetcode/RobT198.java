@@ -35,10 +35,29 @@ public class RobT198 {
         if (hight == low) return nums[hight];
         if (hight > low) {
             int middle = low + (hight - low) / 2;
-            int leftMax = robByRecursion1(nums, low, middle - 1);
-            int rightMax = robByRecursion1(nums, middle + 1, hight);
-            return Integer.max(nums[middle] + robByRecursion1(nums, low, middle - 2) + robByRecursion1(nums, middle + 2, hight), leftMax + rightMax);
+            return Integer.max(nums[middle] + robByRecursion1(nums, low, middle - 2) + robByRecursion1(nums, middle + 2, hight),
+                    robByRecursion1(nums, low, middle - 1) + robByRecursion1(nums, middle + 1, hight));
         }
         return 0;
     }
+
+
+    // 参考
+    public static int rob2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int length = nums.length;
+        if (length == 1) {
+            return nums[0];
+        }
+        int first = nums[0], second = Math.max(nums[0], nums[1]);
+        for (int i = 2; i < length; i++) {
+            int temp = second;
+            second = Math.max(first + nums[i], second);
+            first = temp;
+        }
+        return second;
+    }
+
 }
