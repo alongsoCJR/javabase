@@ -69,6 +69,6 @@ public class RobT198Test extends AbstractTest {
     // 1 {3,1} + {2,3,1}
     @Test
     public void rob() {
-        Assert.assertEquals(exceptedNum, RobT198.rob(inputNums));
+        Assert.assertEquals(exceptedNum, RobT198.rob1(inputNums));
     }
 }
