@@ -59,6 +59,6 @@ public class IsPowerOfTwoT231Test extends AbstractTest {
 
     @Test
     public void isPowerOfTwo() {
-        Assert.assertEquals(exceptedBoolean, IsPowerOfTwoT231.isPowerOfTwo1(inputNum));
+        Assert.assertEquals(exceptedBoolean, IsPowerOfTwoT231.isPowerOfTwo2(inputNum));
     }
 }
