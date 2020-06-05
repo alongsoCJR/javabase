@@ -39,14 +39,14 @@ import static org.junit.Assert.*;
 
 public class RobT198Test extends AbstractTest {
 
-    //    @Before
+    //        @Before
     public void setUp() throws Exception {
         inputNums = new int[]{1, 2, 3, 1};
         exceptedNum = 4;
     }
 
 
-    //    @Before
+    //        @Before
     public void setUp1() throws Exception {
         inputNums = new int[]{2, 7, 9, 3, 1};
         exceptedNum = 12;
