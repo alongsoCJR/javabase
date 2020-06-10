@@ -51,6 +51,7 @@ public abstract class AbstractTest {
     public static TreeNode outputTree = null;
 
     public Boolean exceptedBoolean = null;
+    public char exceptedChar = 'e';
 
     /** List<T>**/
     public static List inputArrayList = new ArrayList<>();
