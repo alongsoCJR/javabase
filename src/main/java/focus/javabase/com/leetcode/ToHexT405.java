@@ -39,7 +39,7 @@ public class ToHexT405 {
                 ret = mod + ret;
             }
             // 无符号右移
-            div = div >>> 4;
+            div = div >> 4;
         }
         return ret;
     }
