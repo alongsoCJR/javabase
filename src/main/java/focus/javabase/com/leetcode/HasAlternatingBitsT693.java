@@ -26,6 +26,12 @@ public class HasAlternatingBitsT693 {
         return true;
     }
 
+    // 参考
+    public static boolean hasAlternatingBits2(int n) {
+        int num = (n ^ (n >> 1)) + 1;
+        return (num & (num - 1)) == 0;
+    }
+
 
     // if (n > 2 && (n & (n - 1)) == 0) {
     //            return false;
