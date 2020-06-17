@@ -15,6 +15,17 @@ public class HasAlternatingBitsT693 {
         return true;
     }
 
+    // 优化
+    public static boolean hasAlternatingBits1(int n) {
+        while (n > 0) {
+            if ((n & 1 ^ ((n >> 1) & 1)) == 0) {
+                return false;
+            }
+            n = n >> 1;
+        }
+        return true;
+    }
+
 
     // if (n > 2 && (n & (n - 1)) == 0) {
     //            return false;
