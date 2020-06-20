@@ -11,7 +11,7 @@ public class GumballMachineTest extends AbstractTest {
     @Test
     public void insertQuarter() {
 
-        GumballMachine gumballMachine = new GumballMachine(5);
+        StateGumballMachine gumballMachine = new StateGumballMachine(5);
         System.out.println(gumballMachine);
 
         gumballMachine.insertQuarter();
