@@ -50,6 +50,6 @@ public class IsPalindromeNodeT234Test extends AbstractTest {
     //Memory Usage:46.4 MB, less than 5.41% of Java online submissions
     @Test
     public void isPalindrome() {
-        Assert.assertEquals(exceptedBoolean, IsPalindromeNodeT234.isPalindrome(inputList));
+        Assert.assertEquals(exceptedBoolean, IsPalindromeNodeT234.isPalindrome1(inputList));
     }
 }
