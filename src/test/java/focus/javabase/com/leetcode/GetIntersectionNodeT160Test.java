@@ -75,7 +75,7 @@ public class GetIntersectionNodeT160Test extends AbstractTest {
     //intersectVal = 8, listA = [4,1,8,4,5], listB = [5,0,1,8,4,5]
 
 
-    //        @Before
+    @Before
     public void setUp() throws Exception {
         exceptedList = new ListNode(8);
         ListNode behand1 = new ListNode(4);
@@ -96,7 +96,7 @@ public class GetIntersectionNodeT160Test extends AbstractTest {
     }
 
 
-    @Before
+    //    @Before
     public void setUp1() throws Exception {
 
         inputList = new ListNode(2);
