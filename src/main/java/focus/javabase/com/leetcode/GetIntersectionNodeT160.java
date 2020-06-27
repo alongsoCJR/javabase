@@ -67,10 +67,10 @@ public class GetIntersectionNodeT160 {
             }
             headKey = headKey.next;
         }
-        headKey = headB;
-        while (headKey != null) {
-            headKey = headKey.next;
-            if (headA == headKey) {
+
+        while (headB != null) {
+            headB = headB.next;
+            if (headB == headKey) {
                 return true;
             }
         }
