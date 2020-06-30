@@ -59,16 +59,56 @@ public class MoveZeroesT283 {
         nums[j] = tmp;
     }
 
+    // 4, 2, 4, 0, 0, 3, 0, 5, 1, 0
+    public static void moveZeroes3(int[] nums) {
+        int i = 0;
+        int j = 0;
+        while (i < nums.length && j < nums.length) {
+            if (nums[i] == 0) {
+                i++;
+            }
+            if (nums[j] != 0) {
+                j++;
+            }
 
-    //int i = 0;
-    //        int j = 0;
-    //        while (j < nums.length) {
-    //            if (nums[i] != 0) {
-    //                i++;
-    //            }
-    //
-    //            if (nums[j] == 0) {
-    //
-    //            }
-    //        }
+            if (i > j && i < nums.length && nums[i] != 0) {
+                swap(nums, i++, j++);
+            } else {
+                i++;
+            }
+
+        }
+
+    }
+
+
+    // 参考
+    public static void moveZeroes4(int[] nums) {
+        int tmp = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[tmp++] = nums[i];
+            }
+        }
+
+        for (int i = tmp; i < nums.length; i++) {
+            nums[i] = 0;
+        }
+    }
+
+
+    // 参考
+    public static void moveZeroes5(int[] nums) {
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[j] = nums[i];
+                if (i != j) {
+                    nums[i] = 0;
+                }
+                j++;
+            }
+        }
+    }
+
 }
