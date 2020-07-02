@@ -35,6 +35,6 @@ public class FindDisappearedNumbersT448Test extends AbstractTest {
 
     @Test
     public void findDisappearedNumbers() {
-        FindDisappearedNumbersT448.findDisappearedNumbers2(inputNums);
+        FindDisappearedNumbersT448.findDisappearedNumbers4(inputNums);
     }
 }
