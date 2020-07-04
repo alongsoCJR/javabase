@@ -60,4 +60,71 @@ public class FindPairsT532 {
         }
         return count;
     }
+
+    // 暴力法优化 时间复杂度O(N^2) 空间复杂度O(N)
+    public static int findPairs2(int[] nums, int k) {
+        if (k < 0) return 0;
+        // 排序，避免Map覆盖的问题
+        Arrays.sort(nums);
+        int count = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length - 1; i++) {
+            // 如果有直接跳过
+            if (map.containsKey(nums[i])) {
+                continue;
+            }
+            for (int j = i + 1; j < nums.length; j++) {
+                if (Math.abs(nums[i] - nums[j]) == k) {
+                    if (!map.containsKey(nums[i])) {
+                        map.put(nums[i], nums[j]);
+                        count++;
+                    }
+                }
+            }
+
+        }
+        return count;
+    }
+
+
+    // 参考
+    public static int findPairs3(int[] nums, int k) {
+        if (k < 0) return 0;
+        int count = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
+        }
+        Set<Map.Entry<Integer, Integer>> entrySet = map.entrySet();
+        for (Map.Entry<Integer, Integer> entry : entrySet) {
+            int key = entry.getKey();
+            int value = entry.getValue();
+            if (k == 0 && value > 1) {
+                count++;
+            } else if (k != 0 && map.containsKey(key - k)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
+    // 参考
+    public int findPairs4(int[] nums, int k) {
+        if (k < 0)
+            return 0;
+        Arrays.sort(nums);
+        int start = 0, count = 0, prev = 0x7fffffff;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] - nums[start] > k || prev == nums[start]) {
+                if (++start != i) {
+                    i--;
+                }
+            } else if (nums[i] - nums[start] == k) {
+                prev = nums[start++];
+                count++;
+            }
+        }
+        return count;
+    }
 }

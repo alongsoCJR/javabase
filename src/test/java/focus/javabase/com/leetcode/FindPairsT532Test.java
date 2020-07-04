@@ -70,14 +70,14 @@ public class FindPairsT532Test extends AbstractTest {
     }
 
 
-    //        @Before
+    @Before
     public void setUp2() throws Exception {
         inputNums = new int[]{1, 3, 1, 5, 4};
         inputNum = 0;
         exceptedNum = 1;
     }
 
-    //    @Before
+    //        @Before
     public void setUp3() throws Exception {
         inputNums = new int[]{1, 1, 1, 2, 1};
         inputNum = 1;
@@ -99,7 +99,13 @@ public class FindPairsT532Test extends AbstractTest {
 
     @Test
     public void findPairs1() {
-        Assert.assertEquals(exceptedNum, FindPairsT532.findPairs1(inputNums, inputNum));
+        Assert.assertEquals(exceptedNum, FindPairsT532.findPairs2(inputNums, inputNum));
+    }
+
+
+    @Test
+    public void findPairs3() {
+        Assert.assertEquals(exceptedNum, FindPairsT532.findPairs3(inputNums, inputNum));
     }
 
 
