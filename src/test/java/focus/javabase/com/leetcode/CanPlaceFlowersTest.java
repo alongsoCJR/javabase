@@ -55,7 +55,7 @@ public class CanPlaceFlowersTest extends AbstractTest {
     //			stdout:
     @Test
     public void canPlaceFlowers() {
-        Assert.assertEquals(exceptedBoolean, CanPlaceFlowers.canPlaceFlowers1(inputNums, inputNum));
+        Assert.assertEquals(exceptedBoolean, CanPlaceFlowers.canPlaceFlowers2(inputNums, inputNum));
     }
 
 

@@ -1,5 +1,7 @@
 package focus.javabase.com.leetcode;
 
+import java.util.Arrays;
+
 public class CanPlaceFlowers {
 
     // 1,0,1,0,0,1,0
@@ -58,5 +60,36 @@ public class CanPlaceFlowers {
             }
         }
         return count >= n;
+    }
+
+
+    // 参考
+    public static boolean canPlaceFlowers2(int[] flowerbed, int n) {
+        int count = 0;
+        int[] arrays = new int[flowerbed.length + 2];
+        System.arraycopy(flowerbed, 0, arrays, 1, flowerbed.length);
+        for (int i = 1; i < arrays.length - 1; i++) {
+            if (arrays[i] == 0 && arrays[i + 1] == 0 && arrays[i - 1] == 0) {
+                flowerbed[i] = 1;
+                count++;
+            }
+        }
+        return count >= n;
+    }
+
+    //参考 将前面看作有个0 count从1开始计数
+    public boolean canPlaceFlowers3(int[] flowerbed, int n) {
+        int count = 1;
+        int result = 0;
+        for (int i = 0; i < flowerbed.length; i++) {
+            if (flowerbed[i] == 0) {
+                count++;
+            } else {
+                result += (count - 1) / 2;
+                count = 0;
+            }
+        }
+        if (count != 0) result += count / 2;
+        return result >= n;
     }
 }
