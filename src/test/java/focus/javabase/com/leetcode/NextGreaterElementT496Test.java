@@ -55,15 +55,30 @@ import static org.junit.Assert.*;
 
 public class NextGreaterElementT496Test extends AbstractTest {
 
-    @Before
+    //    @Before
     public void setUp() throws Exception {
         inputNums = new int[]{4, 1, 2};
         exceptedNums = new int[]{-1, 3, -1};
     }
 
+
+    @Before
+    public void setUp1() throws Exception {
+        inputNums = new int[]{1, 3, 5, 2, 4};
+        exceptedNums = new int[]{7, 7, 7, 7, 7};
+    }
+
+    //info
+    //			Wrong Answer:
+    //			input:[1,3,5,2,4]
+    //			[6,5,4,3,2,1,7]
+    //			Output:[7,-1,-1,-1,-1]
+    //			Expected:[7,7,7,7,7]
+    //			stdout:
+    //
     @Test
     public void nextGreaterElement() {
-        int[] nums2 = new int[]{1, 3, 4, 2};
-        Assert.assertArrayEquals(exceptedNums, NextGreaterElementT496.nextGreaterElement(inputNums, nums2));
+        int[] nums2 = new int[]{6, 5, 4, 3, 2, 1, 7};
+        Assert.assertArrayEquals(exceptedNums, NextGreaterElementT496.nextGreaterElement1(inputNums, nums2));
     }
 }
