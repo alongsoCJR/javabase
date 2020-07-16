@@ -73,12 +73,12 @@ public class BackspaceCompareT844Test extends AbstractTest {
 
     @Before
     public void setUp() throws Exception {
-        inputStrs = new String[]{"ab#c", "ad#c"};
+        inputStrs = new String[]{"a##c", "#a#c"};
         exceptedBoolean = true;
     }
 
     @Test
     public void backspaceCompare() {
-        Assert.assertEquals(exceptedBoolean, BackspaceCompareT844.backspaceCompare(inputStrs[0], inputStrs[1]));
+        Assert.assertEquals(exceptedBoolean, BackspaceCompareT844.backspaceCompare3(inputStrs[0], inputStrs[1]));
     }
 }
