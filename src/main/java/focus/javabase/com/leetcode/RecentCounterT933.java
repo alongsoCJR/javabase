@@ -87,7 +87,7 @@ public class RecentCounterT933 {
             if (scanner.hasNextInt()) {
                 int t = scanner.nextInt();
                 if (t == -1) {
-                    rc.queue = new int[3001];
+                    rc = t933.new RecentCounter();
                 }
                 System.out.println(rc.ping(t));
             }
