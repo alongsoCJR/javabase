@@ -12,15 +12,13 @@ public class BuildArrayT1441 {
         List<String> ret = new ArrayList<>();
         int i = 0;
         int j = 1;
+        // 重构
         while (i < target.length && j <= n) {
-            if (target[i] == j) {
-                ret.add(CONT_STR[0]);
+            ret.add(CONT_STR[0]);
+            if (target[i] == (j++)) {
                 i++;
-                j++;
             } else {
-                ret.add(CONT_STR[0]);
                 ret.add(CONT_STR[1]);
-                j++;
             }
         }
         return ret;
