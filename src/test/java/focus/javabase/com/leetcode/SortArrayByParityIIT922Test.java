@@ -52,4 +52,14 @@ public class SortArrayByParityIIT922Test extends AbstractTest {
     public void sortArrayByParityII() {
         Assert.assertArrayEquals(exceptedNums, SortArrayByParityIIT922.sortArrayByParityII(inputNums));
     }
+
+    @Test
+    public void sortArrayByParityII1() {
+        Assert.assertArrayEquals(exceptedNums, SortArrayByParityIIT922.sortArrayByParityII1(inputNums));
+    }
+
+    @Test
+    public void sortArrayByParityII2() {
+        Assert.assertArrayEquals(exceptedNums, SortArrayByParityIIT922.sortArrayByParityII2(inputNums));
+    }
 }
