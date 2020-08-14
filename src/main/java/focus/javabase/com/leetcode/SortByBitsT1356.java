@@ -2,14 +2,11 @@ package focus.javabase.com.leetcode;
 
 
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-
-import static focus.javabase.com.leetcode.SortArrayByParityIIT922.swap;
 
 public class SortByBitsT1356 {
 
+
+    // 冒泡
     public static int[] sortByBits(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
@@ -73,7 +70,52 @@ public class SortByBitsT1356 {
         return count;
     }
 
+    public static void swap(int nums[], int i, int j) {
+        int temp = nums[j];
+        nums[j] = nums[i];
+        nums[i] = temp;
+    }
+
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(sortByBits4(new int[]{3, 4, 6, 7, 11, 1, 2, 3})));
+        System.out.println(Arrays.toString(sortByBits5(new int[]{3, 4, 6, 7, 11, 1, 2, 3})));
+    }
+
+
+    // 快排
+    public static int[] sortByBits5(int[] arr) {
+        sortQuick(arr, 0, arr.length - 1);
+        return arr;
+    }
+
+    private static void sortQuick(int[] arr, int min, int max) {
+        if (max > min) {
+            int partition = partition(arr, min, max);
+            sortQuick(arr, min, partition - 1);
+            sortQuick(arr, partition + 1, max);
+        }
+    }
+
+    private static int partition(int[] arr, int min, int max) {
+        int key = arr[min];
+        while (max > min) {
+            while (max > min && compare(key, arr[max])) {
+                max--;
+            }
+
+            arr[min] = arr[max];
+
+            while (max > min && compare(arr[min], key)) {
+                min++;
+            }
+
+            arr[max] = arr[min];
+        }
+        arr[min] = key;
+        return min;
+    }
+
+    private static boolean compare(int num1, int num2) {
+        return ((Integer.bitCount(num1) != Integer.bitCount(num2) || (num1 <= num2))
+                && (Integer.bitCount(num1) <= Integer.bitCount(num2)));
     }
 }
