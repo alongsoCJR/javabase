@@ -137,5 +137,24 @@ public class BinaryTreePathsT257 {
         }
         return result;
     }
+
+    public static List binaryTreePaths4(TreeNode root) {
+        List<String> result = new ArrayList<>();
+        searchTreePaths(root, "", result);
+        return result;
+    }
+
+    private static void searchTreePaths(TreeNode root, String path, List<String> result) {
+        if (root != null) {
+            path += root.val;
+            if (root.left == null && root.right == null) {
+                result.add(path);
+            } else {
+                path += "->";
+                searchTreePaths(root.left, path, result);
+                searchTreePaths(root.right, path, result);
+            }
+        }
+    }
 }
 

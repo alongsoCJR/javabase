@@ -40,4 +40,10 @@ public class PrintTreePathsTest extends AbstractTest {
         List list = PrintTreePaths.print1(inputTree);
         System.out.println(list);
     }
+
+    @Test
+    public void binaryTreePaths() {
+        List list = PrintTreePaths.binaryTreePaths(inputTree);
+        System.out.println(list);
+    }
 }
