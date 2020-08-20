@@ -3,6 +3,7 @@ package focus.javabase.com.algorithm.interview;
 import focus.javabase.com.leetcode.base.TreeNode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -88,4 +89,26 @@ public class PrintTreePaths {
         }
         return result;
     }
+
+    // 递归
+    public static List<List<Integer>> binaryTreePaths(TreeNode root) {
+        List<List<Integer>> paths = new LinkedList<>();
+        searchTreePaths(root, paths);
+        return paths;
+    }
+
+    private static void searchTreePaths(TreeNode root, List<List<Integer>> paths) {
+        List<Integer> path = new LinkedList<>();
+        if (root != null) {
+            path.add(root.val);
+            if (root.left == null && root.right == null) {
+                paths.add(path);
+            } else {
+                searchTreePaths(root.left, paths);
+                searchTreePaths(root.right, paths);
+            }
+        }
+    }
+
+    // 迭代实现 参考官方
 }

@@ -31,4 +31,10 @@ public class BinaryTreePathsT257Test extends AbstractTest {
         List list = BinaryTreePathsT257.binaryTreePaths2(inputTree);
         System.out.println(list);
     }
+
+    @Test
+    public void binaryTreePaths2() {
+        List list = BinaryTreePathsT257.binaryTreePaths4(inputTree);
+        System.out.println(list);
+    }
 }
