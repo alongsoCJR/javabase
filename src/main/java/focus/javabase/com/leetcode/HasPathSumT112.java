@@ -25,4 +25,17 @@ public class HasPathSumT112 {
         }
         return sum(root.left, sum - root.val) || sum(root.right, sum - root.val);
     }
+
+
+    // 参考
+    public static boolean hasPathSum1(TreeNode root, int sum) {
+        if (root == null) {
+            return false;
+        }
+        if (root.left == null && root.right == null) {
+            return root.val == sum;
+        }
+        return hasPathSum1(root.left, sum - root.val) ||
+                hasPathSum1(root.right, sum - root.val);
+    }
 }

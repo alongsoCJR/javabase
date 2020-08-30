@@ -77,6 +77,6 @@ public class HasPathSumT112Test extends AbstractTest {
     //			stdout:
     @Test
     public void hasPathSum() {
-        Assert.assertEquals(exceptedBoolean, HasPathSumT112.hasPathSum(inputTree, inputNum));
+        Assert.assertEquals(exceptedBoolean, HasPathSumT112.hasPathSum1(inputTree, inputNum));
     }
 }
