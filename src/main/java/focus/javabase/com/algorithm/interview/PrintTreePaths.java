@@ -93,19 +93,20 @@ public class PrintTreePaths {
     // 递归
     public static List<List<Integer>> binaryTreePaths(TreeNode root) {
         List<List<Integer>> paths = new LinkedList<>();
-        searchTreePaths(root, paths);
+        searchTreePaths(root, new LinkedList<>(), paths);
         return paths;
     }
 
-    private static void searchTreePaths(TreeNode root, List<List<Integer>> paths) {
-        List<Integer> path = new LinkedList<>();
+    private static void searchTreePaths(TreeNode root, List<Integer> path, List<List<Integer>> paths) {
         if (root != null) {
             path.add(root.val);
             if (root.left == null && root.right == null) {
                 paths.add(path);
             } else {
-                searchTreePaths(root.left, paths);
-                searchTreePaths(root.right, paths);
+                List<Integer> left = new LinkedList<>(path);
+                List<Integer> right = new LinkedList<>(path);
+                searchTreePaths(root.left, left, paths);
+                searchTreePaths(root.right, right, paths);
             }
         }
     }
