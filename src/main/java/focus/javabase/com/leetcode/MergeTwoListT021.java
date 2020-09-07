@@ -136,32 +136,37 @@ public class MergeTwoListT021 {
         return prevhead.next;
     }
 
+    // 复习实现
+    public static ListNode mergeTwoListsBetter(ListNode l1, ListNode l2) {
+        ListNode head = new ListNode(0);
+        ListNode cur = head;
+        while (l1 != null || l2 != null) {
+            if (l1 != null && l2 != null) {
+                if (l1.val > l2.val) {
+                    cur.next = new ListNode(l2.val);
+                    l2 = l2.next;
+                } else {
+                    cur.next = new ListNode(l1.val);
+                    l1 = l1.next;
+                }
+                cur = cur.next;
+            }
 
-    /**
-     *else if (l1.next == null) {
-     *                 if (l1.val > l2.val) {
-     *                     result.next = new ListNodeBak(l2.val);
-     *                     l2 = l2.next;
-     *                     result = result.next;
-     *                 } else {
-     *                     result.next = l1;
-     *                     result = result.next;
-     *                     result.next = l2;
-     *                     break;
-     *                 }
-     *
-     *             } else if (l2.next == null) {
-     *                 if (l2.val > l1.val) {
-     *                     result.next = new ListNodeBak(l1.val);
-     *                     l1 = l1.next;
-     *                     result = result.next;
-     *                 } else {
-     *                     result.next = l2;
-     *                     result = result.next;
-     *                     result.next = l1;
-     *                     break;
-     *                 }
-     *             }
-     **/
+            if (l1 == null || l2 == null) {
+                if (l1 != null) {
+                    cur.next = new ListNode(l1.val);
+                    cur = cur.next;
+                    l1 = l1.next;
+                }
+
+                if (l2 != null) {
+                    cur.next = new ListNode(l2.val);
+                    cur = cur.next;
+                    l2 = l2.next;
+                }
+            }
+        }
+        return head.next;
+    }
 }
 
