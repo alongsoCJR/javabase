@@ -11,7 +11,7 @@ public class IsSubsequence {
 //        boolean output = isOrderSubString("cejf", "abcdeddffsjdlsjflkdsjf");
 
         boolean excepted = false;
-        boolean output = isSubsequence("abc", "aedsfab");
+        boolean output = isSubsequence1("abc", "aedsfab");
         if (excepted == output) {
             System.out.println("Success");
         } else {
@@ -81,4 +81,16 @@ public class IsSubsequence {
         return true;
     }
 
+    // 真的是简洁  参考
+    public static boolean isSubsequence1(String s, String t) {
+        int n = s.length(), m = t.length();
+        int i = 0, j = 0;
+        while (i < n && j < m) {
+            if (s.charAt(i) == t.charAt(j)) {
+                i++;
+            }
+            j++;
+        }
+        return i == n;
+    }
 }
