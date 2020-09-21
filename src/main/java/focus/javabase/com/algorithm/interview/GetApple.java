@@ -6,19 +6,14 @@ package focus.javabase.com.algorithm.interview;
 //则2只猴子停止拿苹果，请用java多线程模拟上面的描述，直接在平台页面编写代码，时间30分钟左右
 //请用面向对象的方式进行编写
 
-
-import java.util.concurrent.atomic.AtomicInteger;
-
-
 /**
  * @Author chenjianrong-lhq
  * @Description 阿里面试题
- * @Date 2020-09-21 09:01
+ * @Date 2020-09-21 09:02
  **/
 public class GetApple {
 
     private static volatile int appleCount = 10000;
-    private static volatile AtomicInteger atc = new AtomicInteger(0);
 
     public static void main(String[] args) {
         Object obj = new Object();
@@ -52,7 +47,6 @@ public class GetApple {
 
         t1.start();
         t2.start();
-
-
     }
 }
+
