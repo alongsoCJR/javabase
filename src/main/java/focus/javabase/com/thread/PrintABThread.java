@@ -53,20 +53,3 @@ public class PrintABThread {
 
 
 }
-
-
-class AThread implements Runnable {
-
-    @Override
-    public void run() {
-        System.out.println("A");
-    }
-}
-
-class BThread implements Runnable {
-
-    @Override
-    public void run() {
-        System.out.println("B");
-    }
-}
