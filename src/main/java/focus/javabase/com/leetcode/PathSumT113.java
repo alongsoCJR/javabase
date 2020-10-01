@@ -2,9 +2,7 @@ package focus.javabase.com.leetcode;
 
 import focus.javabase.com.leetcode.base.TreeNode;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class PathSumT113 {
 
@@ -105,7 +103,7 @@ public class PathSumT113 {
     }
 
 
-    public List<List<Integer>> path1(TreeNode root, int sum) {
+    public List<List<Integer>> pathSum1(TreeNode root, int sum) {
         List<List<Integer>> paths = new LinkedList<>();
         searchTreePaths(root, new LinkedList<>(), paths, sum);
         return paths;
@@ -123,5 +121,78 @@ public class PathSumT113 {
                 searchTreePaths(root.right, right, paths, sum - root.val);
             }
         }
+    }
+
+    List<List<Integer>> paths = new LinkedList<>();
+    Deque<Integer> deque = new LinkedList<>();
+
+    // 深度优先遍历 参考
+    public List<List<Integer>> pathSum2(TreeNode root, int sum) {
+        dfs(root, sum);
+        return paths;
+    }
+
+    private void dfs(TreeNode root, int sum) {
+        if (root == null) {
+            return;
+        }
+
+        // 放入队列中
+        deque.offerLast(root.val);
+
+        if (root.left == null && root.right == null && root.val == sum) {
+            List<Integer> list = new LinkedList<>(deque);
+            paths.add(list);
+        }
+
+        dfs(root.left, sum - root.val);
+        dfs(root.right, sum - root.val);
+        deque.pollLast();
+    }
+
+    // 层次遍历 迭代实现 参考官方
+    public static List<List<Integer>> pathSum3(TreeNode root, int sum) {
+        List<List<Integer>> paths = new LinkedList<>();
+        if (root == null) {
+            return paths;
+        }
+
+        Queue<TreeNode> nodeQueue = new LinkedList<>();
+        Queue<List<Integer>> listQueue = new LinkedList<>();
+        Queue<Integer> sumQueue = new LinkedList<>();
+        sumQueue.offer(sum);
+        nodeQueue.offer(root);
+
+        List<Integer> rootList = new LinkedList<>();
+        rootList.add(root.val);
+        listQueue.offer(rootList);
+        while (!nodeQueue.isEmpty()) {
+            List<Integer> list = listQueue.poll();
+            TreeNode node = nodeQueue.poll();
+            int subSum = sumQueue.poll();
+            if (node.left == null && node.right == null && node.val == subSum) {
+                paths.add(new LinkedList<>(list));
+            } else {
+                if (node.left != null) {
+                    nodeQueue.offer(node.left);
+
+                    List<Integer> leftList = new LinkedList<>(list);
+                    leftList.add(node.left.val);
+                    listQueue.offer(leftList);
+                    sumQueue.offer(subSum - node.val);
+                }
+
+                if (node.right != null) {
+                    nodeQueue.offer(node.right);
+
+                    List<Integer> rightList = new LinkedList<>(list);
+                    rightList.add(node.right.val);
+                    listQueue.offer(rightList);
+                    sumQueue.offer(subSum - node.val);
+
+                }
+            }
+        }
+        return paths;
     }
 }
