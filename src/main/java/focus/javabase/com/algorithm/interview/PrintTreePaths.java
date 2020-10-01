@@ -2,10 +2,7 @@ package focus.javabase.com.algorithm.interview;
 
 import focus.javabase.com.leetcode.base.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 
 /**
@@ -111,5 +108,43 @@ public class PrintTreePaths {
         }
     }
 
-    // 迭代实现 参考官方
+    // 层次遍历 迭代实现 参考官方
+    public static List<List<Integer>> binaryTreePaths0(TreeNode root) {
+        List<List<Integer>> paths = new LinkedList<>();
+        if (root == null) {
+            return paths;
+        }
+
+        Queue<TreeNode> nodeQueue = new LinkedList<>();
+        Queue<List<Integer>> listQueue = new LinkedList<>();
+        nodeQueue.offer(root);
+
+        List<Integer> rootList = new LinkedList<>();
+        rootList.add(root.val);
+        listQueue.offer(rootList);
+        while (!nodeQueue.isEmpty()) {
+            List<Integer> list = listQueue.poll();
+            TreeNode node = nodeQueue.poll();
+            if (node.left == null && node.right == null) {
+                paths.add(new LinkedList<>(list));
+            } else {
+                if (node.left != null) {
+                    nodeQueue.offer(node.left);
+
+                    List<Integer> leftList = new LinkedList<>(list);
+                    leftList.add(node.left.val);
+                    listQueue.offer(leftList);
+                }
+
+                if (node.right != null) {
+                    nodeQueue.offer(node.right);
+
+                    List<Integer> rightList = new LinkedList<>(list);
+                    rightList.add(node.right.val);
+                    listQueue.offer(rightList);
+                }
+            }
+        }
+        return paths;
+    }
 }
