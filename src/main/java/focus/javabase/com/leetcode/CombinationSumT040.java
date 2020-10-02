@@ -1,51 +1,60 @@
-package focus.javabase.com.algorithm.interview;
+package focus.javabase.com.leetcode;
 
+import focus.javabase.com.algorithm.interview.Combination;
 
 import java.util.*;
 
-/**
- * @Author chenjianrong-lhq
- * @Description mt组合 机试题
- * @Date 2020-09-21 09:02
- **/
-public class Combination {
+public class CombinationSumT040 {
 
-
-    public static List<String> combination(String string) {
-        List<String> result = new LinkedList<>();
-        for (int num = 1; num <= string.length(); num++) {
-            combinationByRecursion(string, num, result);
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        // 对数组重复元素去重
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int num : candidates) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
+        int[] array = new int[map.size()];
+        int index = 0;
+        for (int num : map.keySet()) {
+            array[index++] = num;
+        }
+
+        List<List<Integer>> result = new LinkedList<>();
+        List<Integer> combine = new ArrayList<>();
+        dfs(array, target, result, combine, 0);
+
+        // 再处理重复的元素
+
+
         return result;
     }
 
-    private static void combinationByRecursion(String string, int num, List<String> result) {
-        if (num == 1) {
-            for (char s : string.toCharArray()) {
-                result.add(s + "");
-            }
+
+    public void dfs(int[] candidates, int target, List<List<Integer>> result, List<Integer> combine, int index) {
+        if (index == candidates.length) {
             return;
         }
 
-        if (num == string.length()) {
-            result.add(string);
+        if (target == 0) {
+            List<Integer> list = new LinkedList<>(combine);
+            result.add(list);
+            return;
         }
+        // 不选择当前元素
+        dfs(candidates, target, result, combine, index + 1);
 
-        if (string.length() > num) {
-            // 不包含
-            combinationByRecursion(string.substring(1), num, result);
-
-            // 包含
-            List<String> list = new LinkedList<>();
-            combinationByRecursion(string.substring(1), num - 1, list);
-            for (String s : list) {
-                s += string.charAt(0);
-                result.add(s);
+        // 选择当前元素
+        if (target - candidates[index] >= 0) {
+            combine.add(candidates[index]);
+            dfs(candidates, target - candidates[index], result, combine, index + 1);
+            if (index == candidates.length - 1 && target == candidates[index]) {
+                result.add(new LinkedList<>(combine));
             }
+            combine.remove(combine.size() - 1);
         }
     }
 
-    public static List<List<Integer>> combinationForSum(int[] nums, int target) {
+    // 组合时，区分重复的数字
+    public static List<List<Integer>> combinationSum(int[] nums, int target) {
         List<List<Integer>> outputArrayList = Combination.combinationWithArray(nums);
         List<List<Integer>> result = new LinkedList<>();
         for (List<Integer> list : outputArrayList) {
@@ -101,15 +110,17 @@ public class Combination {
 
     }
 
-    public static List<List<Integer>> combinationSum(int[] candidates, int target) {
+    public List<List<Integer>> combinationSum3(int[] candidates, int target) {
+        // 对数组进行排序
+        Arrays.sort(candidates);
         List<List<Integer>> result = new LinkedList<>();
         List<Integer> combine = new ArrayList<>();
-        dfs(candidates, target, result, combine, 0);
+        dfs3(candidates, target, result, combine, 0);
         return result;
     }
 
 
-    public static void dfs(int[] candidates, int target, List<List<Integer>> result, List<Integer> combine, int index) {
+    public void dfs3(int[] candidates, int target, List<List<Integer>> result, List<Integer> combine, int index) {
         if (index == candidates.length) {
             return;
         }
@@ -119,13 +130,17 @@ public class Combination {
             result.add(list);
             return;
         }
+
+        if (candidates[index] == candidates[index - 1]) {
+
+        }
         // 不选择当前元素
-        dfs(candidates, target, result, combine, index + 1);
+        dfs3(candidates, target, result, combine, index + 1);
 
         // 选择当前元素
         if (target - candidates[index] >= 0) {
             combine.add(candidates[index]);
-            dfs(candidates, target - candidates[index], result, combine, index + 1);
+            dfs3(candidates, target - candidates[index], result, combine, index + 1);
             if (index == candidates.length - 1 && target == candidates[index]) {
                 result.add(new LinkedList<>(combine));
             }

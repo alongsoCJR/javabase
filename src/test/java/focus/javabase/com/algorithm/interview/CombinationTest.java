@@ -43,4 +43,10 @@ public class CombinationTest extends AbstractTest {
     public void combinationForSum() {
         outputArrayList = Combination.combinationForSum(inputNums, inputNum);
     }
+
+    // 适用于inptNums和inputNum 都为正数的情况
+    @Test
+    public void combinationSum() {
+        outputArrayList = Combination.combinationSum(inputNums, inputNum);
+    }
 }
