@@ -2,11 +2,8 @@ package focus.javabase.com.leetcode;
 
 import focus.javabase.com.baseTest.AbstractTest;
 import focus.javabase.com.leetcode.base.TreeNode;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class PathSumT113Test extends AbstractTest {
 
