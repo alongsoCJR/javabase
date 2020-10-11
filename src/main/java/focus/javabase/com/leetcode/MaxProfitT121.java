@@ -29,4 +29,20 @@ public class MaxProfitT121 {
         }
         return maxProfit;
     }
+
+    //              7,1,5,3,6,4
+    //maxProfit  0  0 0 4 4 5 5
+    //minVal     +& 7 1 1 1 1 1
+    public int maxProfit2(int[] prices) {
+        int maxProfit = 0;
+        int minVal = Integer.MAX_VALUE;
+
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] > minVal) {
+                maxProfit = Math.max(maxProfit, prices[i] - minVal);
+            }
+            minVal = Math.min(minVal, prices[i]);
+        }
+        return maxProfit;
+    }
 }
