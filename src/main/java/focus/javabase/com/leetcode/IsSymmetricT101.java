@@ -128,7 +128,7 @@ public class IsSymmetricT101 {
     }
 
 
-    //深度遍历 = 先序遍历（栈）
+    //深度遍历 = 先序遍历（栈） 算法修复
     public static void dfsPrint(TreeNode root) {
         if (root == null) {
             return;
@@ -137,11 +137,11 @@ public class IsSymmetricT101 {
         stack.push(root);
         while (!stack.isEmpty()) {
             TreeNode cur = stack.pop();
-            if (cur.left != null) {
-                stack.push(cur.left);
-            }
             if (cur.right != null) {
                 stack.push(cur.right);
+            }
+            if (cur.left != null) {
+                stack.push(cur.left);
             }
             System.out.print(cur.val + " ");
         }
