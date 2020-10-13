@@ -11,6 +11,7 @@ import java.util.Scanner;
  **/
 public class Calculator {
 
+    // 职责单一原则
     public static void cal(int a, int b, String calType) {
         ICalculate calculate = CalculateFactory.getCalculate(calType);
         if (calculate == null) {
@@ -32,6 +33,7 @@ public class Calculator {
     }
 }
 
+// 简单工厂
 class CalculateFactory {
 
     private static final Map<String, ICalculate> calMap = new HashMap();
@@ -39,10 +41,16 @@ class CalculateFactory {
     static {
         calMap.put("add", new AddCalculate());
         calMap.put("sub", new SubCalculate());
+        calMap.put("mod", new ModCalculate());
     }
 
+    // 策略模式
     public static ICalculate getCalculate(String type) {
-        return calMap.get(type);
+        ICalculate calculate = calMap.get(type);
+        if (calculate == null) {
+            System.out.println("工厂中心未找到算法计算规则！请提供！");
+        }
+        return calculate;
     }
 }
 
@@ -63,6 +71,13 @@ class SubCalculate implements ICalculate {
     @Override
     public double calculate(int a, int b) {
         return a - b;
+    }
+}
+
+class ModCalculate implements ICalculate {
+    @Override
+    public double calculate(int a, int b) {
+        return a % b;
     }
 }
 
