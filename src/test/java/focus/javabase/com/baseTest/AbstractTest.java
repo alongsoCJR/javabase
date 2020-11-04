@@ -2,6 +2,7 @@ package focus.javabase.com.baseTest;
 
 import focus.javabase.com.leetcode.base.ListNode;
 import focus.javabase.com.leetcode.base.TreeNode;
+import junit.framework.TestCase;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.After;
@@ -61,6 +62,7 @@ public abstract class AbstractTest {
 
     long startTime = 0L;
     long endTime = 0L;
+    public double inputDouble = 0;
 
     @Before
     public void begin() {
