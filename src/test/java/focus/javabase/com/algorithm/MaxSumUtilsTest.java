@@ -22,7 +22,7 @@ public class MaxSumUtilsTest {
 
     @Test
     public void maxSum1() {
-        int[] arrInt = new int[]{-2, 11, -4, 13, -5, -2};
-        assertEquals(20, MaxSumUtils.maxSum1(arrInt));
+        int[] arrInt = new int[]{-2};
+        assertEquals(-2, MaxSumUtils.maxSum1(arrInt));
     }
 }

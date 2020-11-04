@@ -72,7 +72,7 @@ public class MaxSumUtils {
      **/
     public static int maxSum1(int[] intArr) {
         int len = intArr.length;
-        int sum = 0;
+        int sum = Integer.MIN_VALUE;
         int thisSum = 0;
         for (int i = 0; i < len; i++) {
             if (thisSum > 0) {
@@ -80,10 +80,7 @@ public class MaxSumUtils {
             } else {
                 thisSum = intArr[i];
             }
-
-            if (thisSum > sum) {
-                sum = thisSum;
-            }
+            sum = Math.max(sum, thisSum);
         }
         return sum;
     }

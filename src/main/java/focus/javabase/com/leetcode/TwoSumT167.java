@@ -53,4 +53,8 @@ public class TwoSumT167 {
         return -1;
     }
 
+
+    public static int[] twoSum2(int[] inputNums, int inputNum) {
+        return null;
+    }
 }
