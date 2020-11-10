@@ -63,4 +63,9 @@ public class DeleteDuplicatesT082Test extends AbstractTest {
     public void testDeleteDuplicates1() {
         outputList = DeleteDuplicatesT082.deleteDuplicates1(inputList);
     }
+
+    @Test
+    public void testDeleteDuplicates2() {
+        outputList = DeleteDuplicatesT082.deleteDuplicates2(inputList);
+    }
 }
