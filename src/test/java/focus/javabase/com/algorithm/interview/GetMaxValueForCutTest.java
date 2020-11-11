@@ -11,15 +11,34 @@ import org.junit.Test;
  */
 public class GetMaxValueForCutTest extends AbstractTest {
 
-    @Before
+//    @Before
     public void setUp() throws Exception {
-        inputNums = new int[]{1, 2, 5};
+        inputNums = new int[]{3, 4, 6, 15};
         inputNum = 10;
-        exceptedNum = 16;
+        exceptedNum = 36;
+    }
+
+
+    @Before
+    public void setUp2() throws Exception {
+        inputNums = new int[]{1, 5, 8, 9, 10, 17, 17, 20, 24, 30};
+        inputNum = 10;
+        exceptedNum = 30;
     }
 
     @Test
     public void testCutForMaxValue() {
         Assert.assertEquals(exceptedNum, GetMaxValueForCut.cutForMaxValue(inputNum, inputNums));
+    }
+
+    // 只适用于长度为3的数组
+    @Test
+    public void testCutForMaxValue1() {
+        Assert.assertEquals(exceptedNum, GetMaxValueForCut.cutForMaxValue1(inputNum, inputNums));
+    }
+
+    @Test
+    public void testCutForMaxValue2() {
+        Assert.assertEquals(exceptedNum, GetMaxValueForCut.cutForMaxValue2(inputNum, inputNums));
     }
 }
