@@ -121,4 +121,55 @@ public class GetMaxValueForCut {
         }
         return maxValues[totalLength - 1];
     }
+
+    /**
+     * 暴力法   要求给出所有的value，每一根所对应的价值
+     * 自顶向下递归
+     *
+     * @param totalLength
+     * @param values
+     * @return
+     */
+    public static int cutForMaxValue3(int totalLength, int[] values) {
+        if (totalLength <= 0) {
+            return 0;
+        } else {
+            int profit = 0;
+            for (int i = 0; i < totalLength; i++) {
+                profit = Math.max(cutForMaxValue3(totalLength - i - 1, values) + values[i], profit);
+            }
+            return profit;
+        }
+    }
+
+    /**
+     * 带备忘的自顶向下递归实现
+     *
+     * @param totalLength
+     * @param values
+     * @return
+     */
+    public static int cutForMaxValue4(int totalLength, int[] values) {
+        int[] results = new int[totalLength + 1];
+        for (int i = 0; i <= totalLength; i++) {
+            results[i] = 0;
+        }
+        return memorizedCutForMaxValue3(totalLength, values, results);
+    }
+
+    private static int memorizedCutForMaxValue3(int totalLength, int[] values, int[] results) {
+        if (totalLength == 0) {
+            return 0;
+        }
+        if (results[totalLength] > 0) {
+            return results[totalLength];
+        } else {
+            int profit = 0;
+            for (int i = 0; i < totalLength; i++) {
+                profit = Math.max(cutForMaxValue3(totalLength - i - 1, values) + values[i], profit);
+            }
+            results[totalLength] = profit;
+            return profit;
+        }
+    }
 }

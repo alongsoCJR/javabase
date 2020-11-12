@@ -11,7 +11,7 @@ import org.junit.Test;
  */
 public class GetMaxValueForCutTest extends AbstractTest {
 
-//    @Before
+    //    @Before
     public void setUp() throws Exception {
         inputNums = new int[]{3, 4, 6, 15};
         inputNum = 10;
@@ -19,11 +19,20 @@ public class GetMaxValueForCutTest extends AbstractTest {
     }
 
 
-    @Before
+        @Before
     public void setUp2() throws Exception {
         inputNums = new int[]{1, 5, 8, 9, 10, 17, 17, 20, 24, 30};
         inputNum = 10;
         exceptedNum = 30;
+    }
+
+
+//    @Before
+    public void setUp3() throws Exception {
+        inputNums = new int[]{1, 5, 8, 9, 10, 17, 17, 20, 24, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39
+                , 40};
+        inputNum = 20;
+        exceptedNum = 60;
     }
 
     @Test
@@ -40,5 +49,15 @@ public class GetMaxValueForCutTest extends AbstractTest {
     @Test
     public void testCutForMaxValue2() {
         Assert.assertEquals(exceptedNum, GetMaxValueForCut.cutForMaxValue2(inputNum, inputNums));
+    }
+
+    @Test
+    public void testCutForMaxValue3() {
+        Assert.assertEquals(exceptedNum, GetMaxValueForCut.cutForMaxValue3(inputNum, inputNums));
+    }
+
+    @Test
+    public void testCutForMaxValue4() {
+        Assert.assertEquals(exceptedNum, GetMaxValueForCut.cutForMaxValue4(inputNum, inputNums));
     }
 }
