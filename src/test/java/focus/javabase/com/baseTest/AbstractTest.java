@@ -52,6 +52,7 @@ public abstract class AbstractTest {
 
     public Boolean exceptedBoolean = null;
     public char exceptedChar = 'e';
+    public double exceptedDouble= 0.0;
 
     /** List<T>**/
     public static List inputArrayList = new ArrayList<>();
