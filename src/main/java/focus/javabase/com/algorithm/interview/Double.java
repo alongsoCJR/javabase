@@ -14,19 +14,33 @@ public class Double {
         if (s == null || s.length() == 0) {
             return -1;
         }
-        String[] arrs = s.split("#");
+        String intStr = "";
+        String pointStr = "";
+        boolean isPoint = false;
+        for (char c : s.toCharArray()) {
+            if ('.' == c) {
+                isPoint = true;
+                continue;
+            }
+            if (isPoint) {
+                pointStr += c;
+            } else {
+                intStr += c;
+            }
+
+        }
         // 处理整数部分
         int num1 = 0;
-        if (arrs.length > 0 && arrs[0].length() > 0) {
-            num1 = parseInt(arrs[0]);
+        if (intStr.length() > 0) {
+            num1 = parseInt(intStr);
         }
         // 处理小数部分
         double result = num1;
         int num2 = 0;
-        if (arrs.length > 1 && arrs[1].length() > 0) {
-            num2 = parseInt(arrs[1]);
+        if (pointStr.length() > 0) {
+            num2 = parseInt(pointStr);
             double b = 1;
-            for (int i = 0; i < arrs[1].length(); i++) {
+            for (int i = 0; i < pointStr.length(); i++) {
                 b = b * 10.0;
             }
             result = result + num2 / b;

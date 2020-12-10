@@ -10,22 +10,22 @@ import org.junit.Test;
  */
 public class DoubleTest extends AbstractTest {
 
-    @Before
+//    @Before
     public void setUp() throws Exception {
-        inputStr = "123#11121";
+        inputStr = "123.11121";
         exceptedDouble = 123.11121;
     }
 
 
-    @Before
+//    @Before
     public void setUp2() throws Exception {
-        inputStr = "3#11121";
+        inputStr = "3.11121";
         exceptedDouble = 3.11121;
     }
 
     @Before
     public void setUp3() throws Exception {
-        inputStr = "0#11121";
+        inputStr = "0.11121";
         exceptedDouble = 0.11121;
     }
 
