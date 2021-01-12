@@ -12,7 +12,7 @@ public class GetTranslationCountO46Test extends AbstractTest {
 
     @Before
     public void setUp() throws Exception {
-        inputNum = 122258;
+        inputNum = 12258;
         exceptedNum = 5;
     }
 
