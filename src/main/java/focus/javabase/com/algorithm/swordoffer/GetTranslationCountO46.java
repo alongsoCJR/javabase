@@ -1,5 +1,8 @@
 package focus.javabase.com.algorithm.swordoffer;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @Author Jianrong.Chen
  * @Description 把数字翻译成字符串
@@ -39,4 +42,28 @@ public class GetTranslationCountO46 {
             return 1;
         }
     }
+
+
+    //迭代 12218
+    public static int getTranslationCount2(int number) {
+        if (number < 0) {
+            return -1;
+        }
+        String numberStr = String.valueOf(number);
+        Map<String, Integer> resultMap = new HashMap<>();
+//        resultMap.put(numberStr.substring(numberStr.length() - 1), 1); // 8=1
+        for (int i = numberStr.length() - 2; i >= 0; i--) {
+            String subString = numberStr.substring(i);
+            String front = numberStr.substring(i, i + 2);
+            if (Integer.valueOf(front) >= 11 && Integer.valueOf(front) <= 25) {
+                int count = resultMap.getOrDefault(numberStr.substring(i + 1), 1)
+                        + resultMap.getOrDefault(numberStr.substring(i + 2), 1);
+                resultMap.put(subString, count);
+            } else {
+                resultMap.put(subString, 1);
+            }
+        }
+        return resultMap.get(numberStr);
+    }
+
 }
