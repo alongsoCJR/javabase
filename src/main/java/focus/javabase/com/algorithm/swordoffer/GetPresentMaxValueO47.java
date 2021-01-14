@@ -54,7 +54,7 @@ public class GetPresentMaxValueO47 {
         return result[i][j];
     }
 
-    // 有多少种走法 目的地
+    // 有多少种走法 目的地 递归
     public static int getWaysToDestination(int x, int y) {
         if (x == 0 && y == 0) {
             return 0;
@@ -64,5 +64,22 @@ public class GetPresentMaxValueO47 {
             return 1;
         }
         return getWaysToDestination(x, y - 1) + getWaysToDestination(x - 1, y);
+    }
+
+    // 有多少种走法 目的地 递归
+    public static int getWaysToDestination2(int i, int j) {
+        int[][] result = new int[i + 1][j + 1];
+        for (int n = 0; n <= i; n++) {
+            for (int m = 0; m <= j; m++) {
+                if (n == 0 && m == 0) {
+                    result[n][m] = 0;
+                } else if (n == 0 || m == 0) {
+                    result[n][m] = 1;
+                } else {
+                    result[n][m] = result[n - 1][m] + result[n][m - 1];
+                }
+            }
+        }
+        return result[i][j];
     }
 }

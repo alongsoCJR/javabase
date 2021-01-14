@@ -16,7 +16,7 @@ public class GetPresentMaxValueO47Test extends AbstractTest {
 
     @Before
     public void setWaysToDestination() throws Exception {
-        inputNums = new int[]{100, 100};
+        inputNums = new int[]{3, 4};
         exceptedNum = 35;
     }
 
@@ -33,5 +33,10 @@ public class GetPresentMaxValueO47Test extends AbstractTest {
     @Test
     public void getWaysToDestination() {
         Assert.assertEquals(exceptedNum, GetPresentMaxValueO47.getWaysToDestination(inputNums[0],inputNums[1]));
+    }
+
+    @Test
+    public void getWaysToDestination2() {
+        Assert.assertEquals(exceptedNum, GetPresentMaxValueO47.getWaysToDestination2(inputNums[0],inputNums[1]));
     }
 }
