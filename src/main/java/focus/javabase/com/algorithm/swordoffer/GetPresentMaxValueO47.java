@@ -66,7 +66,7 @@ public class GetPresentMaxValueO47 {
         return getWaysToDestination(x, y - 1) + getWaysToDestination(x - 1, y);
     }
 
-    // 有多少种走法 目的地 递归
+    // 有多少种走法 目的地 迭代
     public static int getWaysToDestination2(int i, int j) {
         int[][] result = new int[i + 1][j + 1];
         for (int n = 0; n <= i; n++) {
