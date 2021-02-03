@@ -71,4 +71,37 @@ public class NthUglyNumberT264 {
 
         return result[n - 1];
     }
+
+    // 参考
+    public static int nthUglyNumber1(int n) {
+        if (n < 1) {
+            return -1;
+        }
+
+        int[] idxs = new int[n];
+        int i1 = 0, i2 = 0, i3 = 0;
+        idxs[0] = 1;
+        for (int index = 0; index < n; index++) {
+            int min = Math.min(Math.min(2 * idxs[i1], 3 * idxs[i2]), 5 * idxs[i3]);
+            if (min == 2 * idxs[i1]) {
+                i1++;
+            }
+
+            if (min == 3 * idxs[i2]) {
+                i2++;
+            }
+
+            if (min == 5 * idxs[i3]) {
+                i3++;
+            }
+            idxs[index] = min;
+        }
+
+        return idxs[n - 1];
+    }
+
+    // 小顶堆
+    public static int nthUglyNumber2(int n) {
+        return -1;
+    }
 }

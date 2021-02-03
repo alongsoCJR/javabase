@@ -29,4 +29,9 @@ public class NthUglyNumberT264Test extends AbstractTest {
     public void nthUglyNumber0() {
         Assert.assertEquals(exceptedNum, NthUglyNumberT264.nthUglyNumber0(inputNum));
     }
+
+    @Test
+    public void nthUglyNumber1() {
+        Assert.assertEquals(exceptedNum, NthUglyNumberT264.nthUglyNumber1(inputNum));
+    }
 }
