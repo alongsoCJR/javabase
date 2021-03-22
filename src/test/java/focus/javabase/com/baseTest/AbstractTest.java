@@ -40,8 +40,10 @@ public abstract class AbstractTest {
     /** ListNode l1**/
     public static ListNode inputList = null;
     public static ListNode inputList2 = null;
+    public static ListNode inputList3 = null;
     public static ListNode exceptedList = null;
     public static ListNode outputList = null;
+    public static ListNode[] inputNodeArrays = null;
 
 
     /** TreeNode **/
