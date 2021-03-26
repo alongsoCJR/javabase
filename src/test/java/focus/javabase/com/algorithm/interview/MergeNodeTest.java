@@ -1,6 +1,7 @@
 package focus.javabase.com.algorithm.interview;
 
 import focus.javabase.com.baseTest.AbstractTest;
+import focus.javabase.com.baseTest.ConvertUtils;
 import focus.javabase.com.leetcode.MergeTwoListT021;
 import focus.javabase.com.leetcode.base.ListNode;
 import focus.javabase.com.leetcode.base.TreeNode;
@@ -29,13 +30,7 @@ public class MergeNodeTest extends AbstractTest {
 
         // 生成单向链表
         int[] excepeArr = new int[]{1, 1, 2, 3, 4, 4, 5, 6};
-        ListNode prevHead = new ListNode(-1);
-        ListNode head = prevHead;
-        for (int i = 0; i < excepeArr.length; i++) {
-            head.next = new ListNode(excepeArr[i]);
-            head = head.next;
-        }
-        exceptedList = prevHead.next;
+        exceptedList = ConvertUtils.convertListNode(excepeArr);
     }
 
     @Test

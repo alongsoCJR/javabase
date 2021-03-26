@@ -26,6 +26,7 @@ public abstract class AbstractTest {
     public static int[] inputNums = {};
     public static int[] outputNums = {};
     public static int[] exceptedNums = {};
+    public static Integer[] inputTreeNums = {};
 
     /** int值**/
     public static int inputNum = Integer.MAX_VALUE;
@@ -50,6 +51,7 @@ public abstract class AbstractTest {
     public static TreeNode inputTree = null;
     public static TreeNode exceptedTree = null;
     public static TreeNode outputTree = null;
+    public static TreeNode[] inputTrees = null;
 
     public Boolean exceptedBoolean = null;
     public char exceptedChar = 'e';
