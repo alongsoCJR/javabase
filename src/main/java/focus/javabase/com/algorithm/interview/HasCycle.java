@@ -1,5 +1,9 @@
 package focus.javabase.com.algorithm.interview;
 
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 /**
  * @Author Jianrong.Chen
  * @Description ks一面
@@ -13,7 +17,7 @@ public class HasCycle {
         root.next.next = new Node(3);
         root.next.next.next = new Node(4);
         root.next.next.next.next = node;
-        if (hasCycle2(root)) {
+        if (hasCycle(root)) {
             System.out.println("测试成功！");
         } else {
             System.out.println("测试失败！");
@@ -33,6 +37,22 @@ public class HasCycle {
             if (slow == fast) {
                 return true;
             }
+        }
+        return false;
+    }
+
+    public static boolean hasCycle(Node head) {
+        if (head == null) {
+            return false;
+        }
+        Set<Node> nodeSet = new HashSet<>();
+        while (head != null) {
+            if (!nodeSet.contains(head)) {
+                nodeSet.add(head);
+            } else {
+                return true;
+            }
+            head = head.next;
         }
         return false;
     }
