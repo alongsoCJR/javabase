@@ -29,6 +29,13 @@ public class ConvertUtils {
         return prevHead.next;
     }
 
+    /**
+     * @Author alongso.cjr
+     * @Description 数组转二叉树（层次遍历转化）
+     * @Date 2021-03-26 16:28
+     * @Param [arrs]
+     * @return focus.javabase.com.leetcode.base.TreeNode
+     **/
     public static TreeNode convertTreeNode(Integer[] arrs) {
         if (arrs == null || arrs.length == 0) {
             return null;
