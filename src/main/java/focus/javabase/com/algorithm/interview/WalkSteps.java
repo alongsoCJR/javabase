@@ -37,4 +37,11 @@ public class WalkSteps {
         }
         return result;
     }
+
+    public static int step0(int n) {
+        if (n == 1 || n == 2) {
+            return n;
+        }
+        return step0(n - 1) + step0(n - 2);
+    }
 }
