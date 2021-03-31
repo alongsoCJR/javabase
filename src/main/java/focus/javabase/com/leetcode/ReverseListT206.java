@@ -9,15 +9,15 @@ public class ReverseListT206 {
     public static ListNode iterativelyReverseList(ListNode head) {
         ListNode reverse = head;
         ListNode prev = null;
-        ListNode cur = null;
+        ListNode next = null;
         while (head != null) {
-            cur = head.next;
+            next = head.next;
             if (head.next == null) {
                 reverse = head;
             }
             head.next = prev;
             prev = head;
-            head = cur;
+            head = next;
         }
         return reverse;
     }
@@ -47,5 +47,7 @@ public class ReverseListT206 {
         }
         return prev;
     }
+
+
 
 }

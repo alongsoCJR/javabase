@@ -7,7 +7,7 @@ import java.util.*;
 
 /**
  * @Author chenjianrong-lhq
- * @Description ks面试题
+ * @Description ks
  * @Date 2020-08-19 09:36
  **/
 public class PrintTreePaths {

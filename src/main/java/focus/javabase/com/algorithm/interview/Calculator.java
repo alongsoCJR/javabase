@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * @Author chenjianrong-lhq
- * @Description 美团面试 设计模式考察
+ * @Description mt 设计模式考察
  * @Date 2020-10-13 18:40
  **/
 public class Calculator {

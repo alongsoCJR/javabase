@@ -32,4 +32,15 @@ public class SingleInstanceT03 {
         }
         return instance;
     }
+
+    public static SingleInstanceT03 getInstance2() {
+        if (instance == null) {
+            synchronized (SingleInstanceT03.class){
+                if (instance == null) {
+                    instance = new SingleInstanceT03();
+                }
+            }
+        }
+        return instance;
+    }
 }

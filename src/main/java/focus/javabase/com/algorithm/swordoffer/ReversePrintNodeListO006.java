@@ -13,7 +13,7 @@ public class ReversePrintNodeListO006 {
 
     // 改变了输入链表的结构
     public static void reversePrintNodeList(ListNode head) {
-        // 反转链表
+        // step
         ListNode node = head;
         ListNode prev = null;
         while (node != null) {

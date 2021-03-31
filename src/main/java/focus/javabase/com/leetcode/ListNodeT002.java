@@ -25,7 +25,7 @@ import focus.javabase.com.leetcode.base.ListNode;
  * *step1: 拆解[7 ->10 ->7]  step2:[8 ->0 -> 7] 之后再反转 得到 [7 -> 0 -> 8]
  * question1: 单链表的反转
  * question2: 需不需要递归，感觉递归加大了算法的难度。记住：能用递归的地方，都能用迭代。
- * question3: 还记得当时面试做的大整数加法吗？
+ * question3: 还记得当时 **做的大整数加法吗？
  */
 public class ListNodeT002 {
 

@@ -2,7 +2,7 @@ package focus.javabase.com.algorithm.interview;
 
 /**
  * @Author chenjianrong-lhq
- * @Description TT面试题  对应leetcodeT392
+ * @Description TT   对应leetcodeT392
  * @Date 2020-09-14 21:47
  **/
 public class IsSubsequence {

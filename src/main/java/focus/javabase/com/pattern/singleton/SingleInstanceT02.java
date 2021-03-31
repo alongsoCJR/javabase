@@ -12,7 +12,7 @@ public class SingleInstanceT02 {
 
     }
 
-    public static SingleInstanceT02 instance = null;
+    private static SingleInstanceT02 instance = null;
 
     // 同步方法作用域太大，性能低
     public static synchronized SingleInstanceT02 getInstance() {

@@ -8,7 +8,7 @@ package focus.javabase.com.algorithm.interview;
 
 /**
  * @Author chenjianrong-lhq
- * @Description 阿里面试题
+ * @Description al
  * @Date 2020-09-21 09:02
  **/
 public class GetApple {

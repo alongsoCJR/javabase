@@ -3,7 +3,7 @@ package focus.javabase.com.algorithm.interview;
 /**
  * @Author Jianrong.Chen
  * @Description 假设你正在爬楼梯, 你一次只能爬一个或者两个台阶, 现在你要爬N阶楼梯, 问有多少种方法。
- *      tt面试题
+ *      tt
  * @Date 2021-03-24 21:40
  **/
 public class WalkSteps {
