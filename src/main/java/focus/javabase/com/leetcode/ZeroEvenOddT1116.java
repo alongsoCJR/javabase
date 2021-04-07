@@ -73,7 +73,7 @@ class ZeroEvenOdd {
             // 打印zero
             printNumber.accept(0);
             // 根据n的值，唤醒奇数/偶数
-            if (i % 2 == 0) {
+            if ((i & 1) == 0) {
                 evenSemaphore.release();
             } else {
                 oddSemaphore.release();
