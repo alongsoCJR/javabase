@@ -11,7 +11,7 @@ public class GuessNumberT374 {
         return guessBettown(0, n);
     }
 
-    // 二分查找注意 high >= low 这个条件
+    // 二分查找注意 high >= low 这个条件,最后一次比较是high和low可能会出现在同一个问题
     private static int guessBettown(int low, int high) {
         if (high >= low) {
             int mid = low + ((high - low) >> 1);
