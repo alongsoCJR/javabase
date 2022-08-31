@@ -2,6 +2,9 @@ package focus.javabase.com.leetcode;
 
 import focus.javabase.com.leetcode.base.ListNode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @Author chenjianrong-lhq
  * @Description 判断列表是否有环
@@ -44,6 +47,23 @@ public class HasCycleT141 {
             fast = fast.next.next;
         }
         return true;
+    }
+
+
+    public static boolean hasCycle2(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+        Set<ListNode> nodeSet = new HashSet<>();
+        while (head != null) {
+            if(nodeSet.contains(head)){
+                return true;
+            }else{
+                nodeSet.add(head);
+            }
+            head = head.next;
+        }
+        return false;
     }
 
 }

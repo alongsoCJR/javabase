@@ -78,8 +78,19 @@ public class HasCycleT141Test extends AbstractTest {
         exceptedBoolean = true;
     }
 
+    //head = [1,2], pos = 0
+    @Before
+    public void setUp1() throws Exception {
+        ListNode posNode = new ListNode(1);
+        inputList = new ListNode(2);
+        inputList.next = posNode;
+        
+
+        exceptedBoolean = true;
+    }
+
     @Test
     public void hasCycle() {
-        Assert.assertEquals(exceptedBoolean, HasCycleT141.hasCycle(inputList));
+        Assert.assertEquals(exceptedBoolean, HasCycleT141.hasCycle2(inputList));
     }
 }

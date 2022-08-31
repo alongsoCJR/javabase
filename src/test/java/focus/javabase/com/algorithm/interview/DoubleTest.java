@@ -33,4 +33,6 @@ public class DoubleTest extends AbstractTest {
     public void testParseDouble() {
         Assert.assertEquals(exceptedDouble, Double.parseDouble(inputStr), 0);
     }
+
+
 }

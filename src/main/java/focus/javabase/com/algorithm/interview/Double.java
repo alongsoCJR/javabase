@@ -1,8 +1,8 @@
 package focus.javabase.com.algorithm.interview;
 
 /**
- * 字符转小树 默认输入 X  输出 X
- * 禁用 parseXXX,X Math.pow,1.2e7 d f 无效
+ * 字符转小数 默认输入 X  输出 X
+ * 禁用 parseXXX(),Math.pow(),1.2e7 d f 无效
  *
  * @author Jianrong.Chen
  */

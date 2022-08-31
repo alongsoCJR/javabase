@@ -55,6 +55,7 @@ public abstract class AbstractTest {
     public double exceptedDouble= 0.0;
 
     /** List<T>**/
+    public static Integer[] inputArray ;
     public static List inputArrayList = new ArrayList<>();
     public static List exceptedArrayList = new ArrayList<>();
     public static List outputArrayList = new ArrayList<>();
