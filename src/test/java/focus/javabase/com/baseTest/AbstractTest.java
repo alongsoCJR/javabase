@@ -57,6 +57,7 @@ public abstract class AbstractTest {
     /** List<T>**/
     public static Integer[] inputArray ;
     public static List inputArrayList = new ArrayList<>();
+    public static List inputArrayList2 = new ArrayList<>();
     public static List exceptedArrayList = new ArrayList<>();
     public static List outputArrayList = new ArrayList<>();
     public static int[][] inputTwoArr = new int[][]{};

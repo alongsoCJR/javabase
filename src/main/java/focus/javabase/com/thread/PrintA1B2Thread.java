@@ -31,8 +31,8 @@ public class PrintA1B2Thread {
             }
         });
 
-        t2.start();
         t1.start();
+        t2.start();
     }
 
 
