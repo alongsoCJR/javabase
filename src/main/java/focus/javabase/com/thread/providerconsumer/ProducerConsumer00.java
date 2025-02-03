@@ -12,7 +12,7 @@ public class ProducerConsumer00 {
     }
 
     public synchronized void produce() {
-        if (num >= capacity) {
+        while (num >= capacity) {
             try {
                 System.out.println("生产数量已达到上限，请消费！");
                 wait();
@@ -21,17 +21,12 @@ public class ProducerConsumer00 {
             }
         }
         ++num;
-        try {
-            Thread.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("生产元素：" + num);
+        System.out.println(Thread.currentThread().getName() + "-生产元素：" + num);
         notify();
     }
 
     public synchronized void consume() {
-        if (num <= 0) {
+        while (num <= 0) {
             try {
                 System.out.println("生产数量为0，请生产！");
                 wait();
@@ -39,12 +34,7 @@ public class ProducerConsumer00 {
                 e.printStackTrace();
             }
         }
-        try {
-            Thread.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("消费元素：" + num);
+        System.out.println(Thread.currentThread().getName() + "—消费元素：" + num);
         --num;
         notify();
     }

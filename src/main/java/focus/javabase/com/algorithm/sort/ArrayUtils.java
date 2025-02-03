@@ -90,7 +90,17 @@ public class ArrayUtils {
         }
     }
 
-    // 时间复杂度 O(n^2) 稳定
+    public static void charuSort(int[] arr) {
+        for (int i = 1; i <= arr.length - 1; i++) {
+            for (int j = i; j > 0; j--) {
+                if (arr[j] < arr[j - 1]) {
+                    swap(arr, j, j - 1);
+                }
+            }
+        }
+    }
+
+    // 时间复杂度 O(n^2) 非稳定
     public static void xuanzeSort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j < arr.length; j++) {
@@ -189,6 +199,8 @@ public class ArrayUtils {
             }
         }
     }
+
+
 
     /**
      * @return void

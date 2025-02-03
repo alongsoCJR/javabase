@@ -7,8 +7,8 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ProducerAndComsumer {
 
     private Lock lock = new ReentrantLock();
-    private Condition notEmpty = lock.newCondition();
-    private Condition notFull = lock.newCondition();
+    private Condition consumer = lock.newCondition();
+    private Condition producer = lock.newCondition();
 
 
     private static final int CAPACITY = 10;
@@ -21,7 +21,7 @@ public class ProducerAndComsumer {
         try {
             // 满了，需要阻塞
             while (count == CAPACITY) {
-                notFull.await();
+                producer.await();
             }
             objects[putPonit] = obj;
             if (++putPonit == CAPACITY) {
@@ -29,7 +29,7 @@ public class ProducerAndComsumer {
                 putPonit = 0;
             }
             count++;
-            notEmpty.signal();
+            consumer.signalAll();
         } finally {
             lock.unlock();
         }
@@ -41,7 +41,7 @@ public class ProducerAndComsumer {
         try {
             // 空了，需要阻塞
             while (count == 0) {
-                notEmpty.await();
+                consumer.await();
             }
             Object result = objects[takePoint];
             //
@@ -50,7 +50,7 @@ public class ProducerAndComsumer {
                 takePoint = 0;
             }
             count--;
-            notFull.signal();
+            producer.signalAll();
             return result;
         } finally {
             lock.unlock();

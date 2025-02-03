@@ -40,5 +40,88 @@ public class FrogStip {
                 System.out.println(" 无法到达指定位置：" + m);
             }
         }
+
+        for (int i = 0; i < arrs.length; i++) {
+            int m = arrs[i];
+            System.out.print("输入的位置为：" + m);
+            if (minStep(m) == -1) {
+                System.out.println(" 无法到达指定位置：" + m);
+            } else {
+                System.out.println("最少次数为" + minStep(m));
+            }
+        }
+
+        for (int i = 0; i < arrs.length; i++) {
+            int m = arrs[i];
+            System.out.print("输入的位置为：" + m);
+            if (minStep(m) == -1) {
+                System.out.println(" 无法到达指定位置：" + m);
+            } else {
+                System.out.println("最少次数为" + minStep(m));
+            }
+        }
+    }
+
+
+    public static int jump(int n) {
+        if (n == 3 || n == 5) {
+            return 1;
+        }
+        if (n < 5) {
+
+        }
+        return Math.min(jump(n - 3) + 1, jump(n - 5) + 1);
+    }
+
+
+    public static int jump0(int n) {
+        if (n == 0) {
+            return 0;
+        }
+
+        if (n < 0) {
+            return -1;
+        }
+        int tmp3 = jump0(n - 3);
+        int tmp5 = jump0(n - 5);
+        if (tmp3 == -1 && tmp5 == -1) {
+            return -1;
+        }
+        if (tmp3 == -1) {
+            return tmp5 + 1;
+        }
+        if (tmp5 == -1) {
+            return tmp3 + 1;
+        }
+        return Math.min(tmp3, tmp5) + 1;
+    }
+
+    public static int minStep(int n) {
+        if (n == 3 || n == 5){
+            return 1;
+        }
+        if (n < 5){
+            return -1;
+        }
+        int [] arr = new int[n];
+        arr[0] = -1;
+        arr[1] = -1;
+        arr[2] = 1;
+        arr[3] = -1;
+        arr[4] = 1;
+        for(int i = 5; i< n; i++){
+            arr[i] = -1;
+            if (arr[i-3] != -1) {
+                arr[i] = arr[i-3] +1;
+            }
+            if (arr[i-5] != -1) {
+                if (arr[i] == -1) {
+                    arr[i] = arr[i-5] +1;
+                    continue;
+                }
+                arr[i] = Math.min(arr[i-5] + 1, arr[i]);
+            }
+        }
+        return arr[n-1];
     }
 }

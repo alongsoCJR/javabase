@@ -26,6 +26,6 @@ public class PathSumT113Test extends AbstractTest {
     @Test
     public void pathSum() {
 
-        outputArrayList = new PathSumT113().pathSum3(inputTree, inputNum);
+        outputArrayList = new PathSumT113().pathSum0(inputTree, inputNum);
     }
 }

@@ -33,7 +33,7 @@ import static org.junit.Assert.*;
 
 // [2,4,6,0,0,0] [1,3,5]
 
-public class MergeArraysT083Test extends AbstractTest {
+public class MergeArraysT083TestO5 extends AbstractTest {
 
 
     //    @Before

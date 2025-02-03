@@ -35,8 +35,8 @@ public class MoveZeroesT283Test extends AbstractTest {
 
     @Before
     public void setUp1() throws Exception {
-        inputNums = new int[]{4, 2, 4, 0, 0, 3, 0, 5, 1, 0};
-        exceptedNums = new int[]{4, 2, 4, 3, 5, 1, 0, 0, 0, 0};
+        inputNums = new int[]{0, 0, 4, 2, 4, 0, 0, 3, 0, 5, 1, 0};
+        exceptedNums = new int[]{4, 2, 4, 3, 5, 1, 0, 0, 0, 0, 0, 0};
     }
 
 

@@ -1,6 +1,7 @@
 package focus.javabase.com.baseTest;
 
 import focus.javabase.com.leetcode.base.ListNode;
+import focus.javabase.com.leetcode.base.Node;
 import focus.javabase.com.leetcode.base.TreeNode;
 import junit.framework.TestCase;
 import org.apache.commons.logging.Log;
@@ -53,6 +54,10 @@ public abstract class AbstractTest {
     public Boolean exceptedBoolean = null;
     public char exceptedChar = 'e';
     public double exceptedDouble= 0.0;
+
+    /** Node **/
+    public static Node inputNode = null;
+    public static Node outputNode = null;
 
     /** List<T>**/
     public static Integer[] inputArray ;

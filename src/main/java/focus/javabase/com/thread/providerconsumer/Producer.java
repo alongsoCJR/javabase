@@ -15,7 +15,7 @@ public class Producer implements Runnable {
         for (int i = 0; i < 100; i++) {
             try {
                 blockingQueue.put(i);
-                System.out.println("生产元素：" + i + ", queues：" + blockingQueue);
+                System.out.println(Thread.currentThread().getName() + "-生产元素：" + i + ", queues：" + blockingQueue);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

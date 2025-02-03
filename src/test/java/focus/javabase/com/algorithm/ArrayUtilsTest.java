@@ -18,7 +18,6 @@ public class ArrayUtilsTest {
 
 
     @Before
-    @Test
     public void testSetUp() {
 //        srcArr = new int[]{100, 46, 72, 12, 8, 9, 22, 12, 13, 89, 10, 70};
         srcArr = new int[]{4, 2, 9, 8, 10, 46, 72, 12, 8};
@@ -47,7 +46,7 @@ public class ArrayUtilsTest {
 
     @Test
     public void testInsertSort() {
-        ArrayUtils.insertSort(srcArr);
+        ArrayUtils.charuSort(srcArr);
         verifySort(srcArr);
     }
 

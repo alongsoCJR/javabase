@@ -69,7 +69,7 @@ import static org.junit.Assert.*;
 // Related Topics 栈 双指针
 
 
-public class BackspaceCompareT844Test extends AbstractTest {
+public class BackspaceComparableT844Test extends AbstractTest {
 
     @Before
     public void setUp() throws Exception {

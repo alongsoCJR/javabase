@@ -2,10 +2,10 @@ package focus.javabase.com.algorithm.swordoffer;
 
 /**
  * @Author chenjianrong-lhq
- * @Description 剑指offer 第五题 合并两个有序数组
+ * @Description 剑指offer 第五题 合并两个有序数组 // 已复
  * @Date 2020-10-04 18:01
  **/
-public class MergeArr {
+public class MergeArrO005 {
 
 
     public void merge(int[] nums1, int m, int[] nums2, int n) {

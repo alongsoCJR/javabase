@@ -16,7 +16,7 @@ public class Consumer implements Runnable {
         try {
             while (true) {
                 TimeUnit.MICROSECONDS.sleep(1);
-                System.out.println(Thread.currentThread().getName() + "消费元素：" + blockingQueue.take());
+                System.out.println(Thread.currentThread().getName() + "-消费元素：" + blockingQueue.take());
             }
         } catch (InterruptedException e) {
             e.printStackTrace();

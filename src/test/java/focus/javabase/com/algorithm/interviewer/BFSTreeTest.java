@@ -27,4 +27,9 @@ public class BFSTreeTest extends AbstractTest {
     public void bfs() {
         VerifyUtils.verifyList(exceptedArrayList, BFSTree.bfs(inputTree));
     }
+
+    @Test
+    public void levelTraverse() {
+        System.out.println(BFSTree.levelTraverseVal(inputTree));
+    }
 }

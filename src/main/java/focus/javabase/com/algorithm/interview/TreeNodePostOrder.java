@@ -22,7 +22,6 @@ public class TreeNodePostOrder {
         // 然后后序遍历二叉树
         List<Integer> result = new ArrayList();
         dfs(root, result);
-
         return result;
     }
 

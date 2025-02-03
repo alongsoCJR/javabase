@@ -54,7 +54,7 @@ public class TwoSumT167 {
     }
 
 
-    // 参考     {2, 7, 11, 15}
+    // 参考     {2, 7, 11, 15} 时间复杂度 O(n)
     public static int[] twoSum2(int[] numbers, int target) {
 
         int left = 0;
